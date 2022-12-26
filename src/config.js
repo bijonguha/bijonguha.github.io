@@ -1,18 +1,18 @@
 module.exports = {
-  siteTitle: 'Bijon Guha | Software Developer | Content Freelancer',
+  siteTitle: 'Bijon Guha | Senior Machine Learning Engineer | Researcher',
   siteDescription:
-    'Bijon Guha is a Software Developer at Amdocs, who loves learning new things and helping tech beginners.',
+    'Bijon Guha is a Senior Machine Learning Engineer at SIEMENS, who is passionate about building Data related applications at Scale',
   siteKeywords:
-    'Bijon Guha, Chandrika, Deb, bijonguha, software developer, software engineer, content freelancer, face mask, face mask detection, web developer, java developer, pepper content, jamshedpur, amdocs, bit, mesra',
+    'Bijon Guha, Bijon, Deb, bijonguha, machine learning engineer, mlops, ml engineer, ml freelancer, iitian, iit roorkee, devops, computer vision, image processing',
   siteUrl: 'https://bijonguha.github.io/',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-45666519-2',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: 'Cl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
   name: 'Bijon Guha',
-  location: 'Jamshedpur, India',
-  email: 'bijonguha@gmail.com',
+  location: 'Bengaluru, India',
+  email: 'iitbguha@gmail.com',
   github: 'https://github.com/bijonguha',
-  twitterHandle: '@bijonguha',
+  twitterHandle: '@BijonGuha',
   socialMedia: [
     {
       name: 'GitHub',
@@ -28,11 +28,11 @@ module.exports = {
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bijonguha',
+      url: 'https://www.instagram.com/piczophile',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bijonguha',
+      url: 'https://twitter.com/BijonGuha',
     },
   ],
 
