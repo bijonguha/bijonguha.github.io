@@ -5,8 +5,8 @@ subtitle: 'I love exploring new things!'
 buttonText: 'Contact Me'
 ---
 
-I'm an India based software developer with a goal-driven creative mindset and passion for learning and innovating.
+I'm a Software Engineer with a goal-driven creative mindset and passion for building impactfull product for the masses.
 
-Currently working as a Software Developer at [Amdocs](https://www.amdocs.com/) and as a Freelance Content Writer for [Pepper Content](https://www.peppercontent.io).
+Currently working as a Senior Machine Learning Engineer at [SIEMENS](https://www.siemens.com/global/en.html) and as a Freelancer [upwork](https://www.upwork.com/freelancers/~01d45a087fd655f40e?viewMode=1).
 
-Outside work, I occasionally blog on [Medium](https://bijonguha.medium.com/). Off-screen, I sketch my thoughts [here](https://pin.it/4W1Rxtj)!
+Outside work, I love to contribute to academia by writing meaninfull research papers and occasionally blog on [Medium](https://medium.com/@iitbguha). Off-screen, I like to ride bikes, travel and create memories [here](https://www.instagram.com/piczophile/?hl=en)!
