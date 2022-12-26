@@ -1,7 +1,7 @@
 ---
 date: '2022-02-01'
 title: 'Learn Beginner Golang'
-github: 'https://github.com/chandrikadeb7/learning-easy-golang'
+github: 'https://github.com/bijonguha/learning-easy-golang'
 external: ''
 tech:
   - Go

@@ -1,7 +1,7 @@
 ---
 date: '2019-04-30'
 title: 'Student Management System'
-github: 'https://github.com/chandrikadeb7/StudentManagementSystem'
+github: 'https://github.com/bijonguha/StudentManagementSystem'
 external: ''
 tech:
   - Java

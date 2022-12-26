@@ -1,7 +1,7 @@
 ---
 date: '2019-12-12'
 title: 'Chatbot-based-Social-Networking-Website'
-github: 'https://github.com/chandrikadeb7/Chatbot-based-Social-Networking-Website'
+github: 'https://github.com/bijonguha/Chatbot-based-Social-Networking-Website'
 external: ''
 tech:
   - PHP

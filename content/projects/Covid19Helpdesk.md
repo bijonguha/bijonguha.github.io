@@ -1,7 +1,7 @@
 ---
 date: '2020-04-13'
 title: 'Covid-19 Helpdesk'
-github: 'https://github.com/chandrikadeb7/Covid-19-HelpDesk'
+github: 'https://github.com/bijonguha/Covid-19-HelpDesk'
 external: 'https://www.youtube.com/watch?v=s9ivtzkpK6w&feature=youtu.be'
 tech:
   - PHP

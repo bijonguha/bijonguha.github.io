@@ -1,7 +1,7 @@
 ---
 date: '2020-06-03'
 title: 'Random Project Idea Generator'
-github: 'https://github.com/chandrikadeb7/Random-ProjectIdeaGenerator'
+github: 'https://github.com/bijonguha/Random-ProjectIdeaGenerator'
 external: ''
 tech:
   - Kotlin
