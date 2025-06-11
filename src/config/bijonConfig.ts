@@ -74,6 +74,15 @@ export const bijonConfig = {
       rating: 5,
       text: "Exceptional work in mathematical equations and handwriting recognition. Deep theoretical knowledge combined with practical skills.",
       category: "Mathematical Foundations"
+    },
+    {
+      id: 7,
+      name: "Developer Community",
+      position: "Open Source Contributors",
+      company: "Global Developer Network",
+      rating: 5,
+      text: "It's rare that you come across standout talent like Bijon. His ability to create user-friendly, performant tools shows exceptional engineering skills and attention to developer experience.",
+      category: "Developer Tools"
     }
   ],
 
@@ -142,6 +151,28 @@ export const bijonConfig = {
         accuracy: "92%",
         teamsUsing: "50+",
         storiesProcessed: "10K+"
+      }
+    },
+    {
+      id: 4,
+      name: "MisterMD",
+      category: "Developer Tools",
+      role: "Full-Stack Developer & UI/UX Engineer",
+      description: "Zero-installation markdown editor that transforms writing with live preview and professional features",
+      achievement: "Built a production-ready markdown editor with real-time rendering and advanced diagram support",
+      impact: "Empowering 10K+ developers monthly with instant, professional documentation tools",
+      techStack: ["React", "Next.js", "TypeScript", "Monaco Editor", "Tailwind CSS"],
+      features: [
+        "Real-time markdown preview",
+        "Advanced diagram support (Mermaid, Chart.js)",
+        "Zero installation required",
+        "Export to PDF/HTML/DOCX"
+      ],
+      metrics: {
+        lighthouse: "100/100",
+        renderTime: "< 10ms",
+        installTime: "0 sec",
+        countries: "15+"
       }
     }
   ],

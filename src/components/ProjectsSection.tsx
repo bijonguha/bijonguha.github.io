@@ -2,7 +2,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, GitBranch, Zap, Shield, Target } from 'lucide-react';
+import { ExternalLink, GitBranch, Zap, Shield, Target, Code } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
 
 const ProjectsSection = () => {
@@ -14,6 +14,8 @@ const ProjectsSection = () => {
         return <GitBranch className="w-6 h-6" />;
       case 'AI-Powered Tools':
         return <Target className="w-6 h-6" />;
+      case 'Developer Tools':
+        return <Code className="w-6 h-6" />;
       default:
         return <Shield className="w-6 h-6" />;
     }
@@ -106,7 +108,8 @@ const ProjectsSection = () => {
                     const relevantTestimonial = bijonConfig.testimonials.find(t => 
                       (project.category === 'Browser-Based LLMs' && t.category === 'AI Architecture') ||
                       (project.category === 'AI Infrastructure' && t.category === 'Strategic AI/ML') ||
-                      (project.category === 'AI-Powered Tools' && t.category === 'Statistical Analysis')
+                      (project.category === 'AI-Powered Tools' && t.category === 'Statistical Analysis') ||
+                      (project.category === 'Developer Tools' && t.category === 'Developer Tools')
                     );
                     
                     if (relevantTestimonial) {
@@ -132,7 +135,8 @@ const ProjectsSection = () => {
                         const demoUrls = {
                           1: 'https://browsermind.vercel.app/',
                           2: 'https://stable-chat-demo.vercel.app/',
-                          3: 'https://mr-agile-demo.vercel.app/'
+                          3: 'https://github.com/bijonguha/jira_backend',
+                          4: 'https://mistermd.vercel.app/'
                         };
                         const url = demoUrls[project.id as keyof typeof demoUrls] || '#';
                         if (url !== '#') window.open(url, '_blank');
@@ -148,8 +152,9 @@ const ProjectsSection = () => {
                       onClick={() => {
                         const codeUrls = {
                           1: 'https://github.com/bijonguha/browsermind',
-                          2: 'https://github.com/bijonguha/stable-chat',
-                          3: 'https://github.com/bijonguha/mr-agile'
+                          2: 'https://github.com/bijonguha/Stable-Chat-UI',
+                          3: 'https://github.com/bijonguha/jira_backend',
+                          4: 'https://github.com/bijonguha/mistermd'
                         };
                         const url = codeUrls[project.id as keyof typeof codeUrls] || '#';
                         if (url !== '#') window.open(url, '_blank');
