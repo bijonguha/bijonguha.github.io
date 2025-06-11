@@ -105,12 +105,12 @@ const ExpertiseSection = () => {
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20 md:block hidden"></div>
             
             <div className="space-y-12">
               {bijonConfig.timeline.map((item, index) => (
-                <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:gap-8 gap-4`}>
+                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-left`}>
                     <Card className="inline-block max-w-md hover:shadow-lg transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="font-bold text-2xl text-primary mb-2">
@@ -135,9 +135,9 @@ const ExpertiseSection = () => {
                   </div>
                   
                   {/* Timeline dot */}
-                  <div className="relative z-10 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg"></div>
+                  <div className="relative z-10 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg md:block hidden"></div>
                   
-                  <div className="flex-1"></div>
+                  <div className="flex-1 md:block hidden"></div>
                 </div>
               ))}
             </div>
