@@ -23,7 +23,14 @@ const Index = () => {
             <a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
-          <Button size="sm" className="hidden md:block">
+          <Button 
+            size="sm" 
+            className="hidden md:block"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              contactSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             Discuss Your AI Challenge
           </Button>
         </div>
@@ -57,24 +64,50 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="px-8 py-4 text-lg">
+            <Button 
+              size="lg" 
+              className="px-8 py-4 text-lg"
+              onClick={() => {
+                window.location.href = `mailto:${bijonConfig.contact.email}?subject=AI Challenge Discussion&body=Hi Bijon, I'd like to discuss my AI challenge with you.`;
+              }}
+            >
               <Mail className="w-5 h-5 mr-2" />
               Discuss Your AI Challenge
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-4 text-lg"
+              onClick={() => {
+                window.open('https://medium.com/@iitbguha', '_blank');
+              }}
+            >
               <ExternalLink className="w-5 h-5 mr-2" />
               View Technical Deep-Dives
             </Button>
           </div>
 
           <div className="flex justify-center gap-6">
-            <a href="#" className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <a 
+              href={`https://${bijonConfig.contact.linkedin}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <a 
+              href={`https://${bijonConfig.contact.github}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <a 
+              href={`mailto:${bijonConfig.contact.email}`} 
+              className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
               <Mail className="w-6 h-6" />
             </a>
           </div>

@@ -253,10 +253,10 @@ export const bijonConfig = {
   },
 
   contact: {
-    email: "bijon@example.com",
+    email: "iitbguha@gmail.com",
     linkedin: "linkedin.com/in/bijonguha",
     github: "github.com/bijonguha",
-    website: "bijonguha.dev"
+    website: "bijonguha.github.io"
   },
 
   seo: {

@@ -86,6 +86,10 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                projectsSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               EXPLORE MY AI JOURNEY
             </Button>
@@ -93,6 +97,9 @@ const HeroSection = () => {
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+              onClick={() => {
+                window.open('https://browsermind.vercel.app/', '_blank');
+              }}
             >
               VIEW LIVE DEMOS
             </Button>

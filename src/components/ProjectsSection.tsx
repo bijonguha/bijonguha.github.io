@@ -125,11 +125,36 @@ const ProjectsSection = () => {
                   })()}
 
                   <div className="flex gap-3 mt-6">
-                    <Button size="sm" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => {
+                        const demoUrls = {
+                          1: 'https://browsermind.vercel.app/',
+                          2: 'https://stable-chat-demo.vercel.app/',
+                          3: 'https://mr-agile-demo.vercel.app/'
+                        };
+                        const url = demoUrls[project.id as keyof typeof demoUrls] || '#';
+                        if (url !== '#') window.open(url, '_blank');
+                      }}
+                    >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => {
+                        const codeUrls = {
+                          1: 'https://github.com/bijonguha/browsermind',
+                          2: 'https://github.com/bijonguha/stable-chat',
+                          3: 'https://github.com/bijonguha/mr-agile'
+                        };
+                        const url = codeUrls[project.id as keyof typeof codeUrls] || '#';
+                        if (url !== '#') window.open(url, '_blank');
+                      }}
+                    >
                       View Code
                     </Button>
                   </div>
