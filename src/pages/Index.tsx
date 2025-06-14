@@ -1,14 +1,25 @@
 
+import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ExpertiseSection from '@/components/ExpertiseSection';
 import FloatingThemeToggle from '@/components/FloatingThemeToggle';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, Github, ExternalLink, Menu, X } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
 
 const Index = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -17,6 +28,8 @@ const Index = () => {
           <div className="font-bold text-xl">
             {bijonConfig.personal.name.split(' ')[0]}
           </div>
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#home" className="hover:text-primary transition-colors">Home</a>
             <a href="#projects" className="hover:text-primary transition-colors">AI Projects</a>
@@ -24,6 +37,7 @@ const Index = () => {
             <a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
+          
           <Button 
             size="sm" 
             className="hidden md:block"
@@ -34,7 +48,72 @@ const Index = () => {
           >
             Discuss Your AI Challenge
           </Button>
+
+          {/* Mobile Hamburger Menu */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-background/95 backdrop-blur-md border-t">
+            <div className="container mx-auto px-6 py-4 space-y-4">
+              <a 
+                href="#home" 
+                className="block text-lg font-medium hover:text-primary transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Home
+              </a>
+              <a 
+                href="#projects" 
+                className="block text-lg font-medium hover:text-primary transition-colors"
+                onClick={closeMobileMenu}
+              >
+                AI Projects
+              </a>
+              <a 
+                href="#expertise" 
+                className="block text-lg font-medium hover:text-primary transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Expertise
+              </a>
+              <a 
+                href="#testimonials" 
+                className="block text-lg font-medium hover:text-primary transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Testimonials
+              </a>
+              <a 
+                href="#contact" 
+                className="block text-lg font-medium hover:text-primary transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </a>
+              <Button 
+                size="sm" 
+                className="w-full mt-4"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  closeMobileMenu();
+                }}
+              >
+                Discuss Your AI Challenge
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Main Sections */}

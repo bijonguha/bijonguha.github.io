@@ -20,7 +20,7 @@ const FloatingThemeToggle = () => {
   };
 
   return (
-    <div className="fixed top-[12px] right-6 z-[60]">
+    <div className="fixed top-[12px] right-16 md:right-6 z-[60]">
       <Button
         variant="outline"
         size="icon"
