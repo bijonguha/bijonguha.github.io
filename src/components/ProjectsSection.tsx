@@ -143,7 +143,7 @@ const ProjectsSection = () => {
                       }}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                      {project.id === 3 ? 'Live Demo' : 'Live App'}
                     </Button>
                     <Button 
                       variant="outline" 

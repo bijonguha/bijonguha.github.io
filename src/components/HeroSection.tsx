@@ -101,7 +101,7 @@ const HeroSection = () => {
                 window.open('https://browsermind.vercel.app/', '_blank');
               }}
             >
-              VIEW LIVE DEMOS
+              VIEW LIVE APPS
             </Button>
           </div>
         </div>
