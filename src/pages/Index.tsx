@@ -31,11 +31,15 @@ const Index = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#home" className="hover:text-primary transition-colors">Home</a>
-            <a href="#projects" className="hover:text-primary transition-colors">AI Projects</a>
-            <a href="#expertise" className="hover:text-primary transition-colors">Expertise</a>
-            <a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            {bijonConfig.navigation.links.map((link, index) => (
+              <a 
+                key={index}
+                href={link.href} 
+                className="hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
           
           <Button 
@@ -46,7 +50,7 @@ const Index = () => {
               contactSection?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Discuss Your AI Challenge
+            {bijonConfig.navigation.ctaButton.label}
           </Button>
 
           {/* Mobile Hamburger Menu */}
@@ -65,41 +69,16 @@ const Index = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/95 backdrop-blur-md border-t">
             <div className="container mx-auto px-6 py-4 space-y-4">
-              <a 
-                href="#home" 
-                className="block text-lg font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Home
-              </a>
-              <a 
-                href="#projects" 
-                className="block text-lg font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
-              >
-                AI Projects
-              </a>
-              <a 
-                href="#expertise" 
-                className="block text-lg font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Expertise
-              </a>
-              <a 
-                href="#testimonials" 
-                className="block text-lg font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Testimonials
-              </a>
-              <a 
-                href="#contact" 
-                className="block text-lg font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Contact
-              </a>
+              {bijonConfig.navigation.links.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.href} 
+                  className="block text-lg font-medium hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
+                >
+                  {link.label}
+                </a>
+              ))}
               <Button 
                 size="sm" 
                 className="w-full mt-4"
@@ -109,7 +88,7 @@ const Index = () => {
                   closeMobileMenu();
                 }}
               >
-                Discuss Your AI Challenge
+                {bijonConfig.navigation.ctaButton.label}
               </Button>
             </div>
           </div>
@@ -159,11 +138,11 @@ const Index = () => {
               size="lg" 
               className="px-8 py-4 text-lg"
               onClick={() => {
-                window.open('https://medium.com/@iitbguha', '_blank');
+                window.open(bijonConfig.heroButtons.secondary.url, '_blank');
               }}
             >
               <ExternalLink className="w-5 h-5 mr-2" />
-              View Technical Deep-Dives
+              {bijonConfig.heroButtons.secondary.label}
             </Button>
           </div>
 

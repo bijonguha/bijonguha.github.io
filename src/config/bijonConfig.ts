@@ -290,6 +290,32 @@ export const bijonConfig = {
     tools: ["Docker", "Kubernetes", "Git", "Jupyter", "MLflow"]
   },
 
+  navigation: {
+    links: [
+      { label: "Home", href: "#home" },
+      { label: "AI Projects", href: "#projects" },
+      { label: "Expertise", href: "#expertise" },
+      { label: "Testimonials", href: "#testimonials" },
+      { label: "Contact", href: "#contact" }
+    ],
+    ctaButton: {
+      label: "Discuss Your AI Challenge",
+      action: "scrollToContact"
+    }
+  },
+
+  heroButtons: {
+    primary: {
+      label: "VIEW LIVE APPS",
+      action: "scrollToProjects"
+    },
+    secondary: {
+      label: "View Technical Deep-Dives",
+      action: "openMedium",
+      url: "https://medium.com/@iitbguha"
+    }
+  },
+
   contact: {
     email: "iitbguha@gmail.com",
     linkedin: "linkedin.com/in/bijonguha",

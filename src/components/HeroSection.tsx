@@ -98,10 +98,11 @@ const HeroSection = () => {
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               onClick={() => {
-                window.open('https://browsermind.vercel.app/', '_blank');
+                const projectsSection = document.getElementById('projects');
+                projectsSection?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              VIEW LIVE APPS
+              {bijonConfig.heroButtons.primary.label}
             </Button>
           </div>
         </div>
