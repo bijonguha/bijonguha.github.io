@@ -8,7 +8,7 @@ export const bijonConfig = {
     primaryIdentity: "Generative AI Engineer | IIT Graduate",
     coreMessage: "I don't just use AI - I understand it inside out, from mathematical foundations to production systems",
     heroAnimation: {
-      loadingText: "> Initializing neural_network.exe...",
+      loadingText: "> Initializing bijon_guha.exe...",
       progressText: "> Loading model weights... [████████████] 100%"
     }
   },
@@ -33,7 +33,7 @@ export const bijonConfig = {
     {
       id: 2,
       name: "Ritvik Raj",
-      position: "Senior AI Engineer", 
+      position: "Architect", 
       company: "Siemens",
       rating: 5,
       text: "Strategic mindset and expertise in AI/ML have always impressed me. Bijon delivers innovative solutions that bridge theory and practical implementation.",
@@ -42,7 +42,7 @@ export const bijonConfig = {
     {
       id: 3,
       name: "Shubham Dubey",
-      position: "Data Scientist",
+      position: "Site Engineer",
       company: "JPMC",
       rating: 5,
       text: "Delivered actionable insights through advanced statistical analysis. His deep understanding of mathematical foundations sets him apart.",
@@ -51,8 +51,8 @@ export const bijonConfig = {
     {
       id: 4,
       name: "Indrajit Kar",
-      position: "AVP-AI",
-      company: "IBM",
+      position: "Director",
+      company: "Zensar",
       rating: 5,
       text: "He makes ML models production-ready with better precision. Outstanding work in bringing AI systems from concept to deployment.",
       category: "Production ML"
@@ -69,8 +69,8 @@ export const bijonConfig = {
     {
       id: 6,
       name: "Sujit Ojha",
-      position: "ML Engineer",
-      company: "Tech Corp",
+      position: "Architect",
+      company: "Pratt and Whitney",
       rating: 5,
       text: "Exceptional work in mathematical equations and handwriting recognition. Deep theoretical knowledge combined with practical skills.",
       category: "Mathematical Foundations"
@@ -195,7 +195,7 @@ export const bijonConfig = {
         name: "Production ML",
         subAreas: ["Model Optimization", "Deployment Strategies", "MLOps", "System Architecture"],
         level: "Expert", 
-        yearsExperience: 5
+        yearsExperience: 7
       },
       {
         name: "Mathematical Foundations",
@@ -207,6 +207,13 @@ export const bijonConfig = {
   },
 
   timeline: [
+    {
+      year: "2018",
+      milestone: "Academic Excellence",
+      description: "Graduated in Applied Mathematics from IIT Roorkee with Image Processing specialization",
+      testimonial: "Government of India",
+      achievement: "IIT Roorkee Graduate • Inspire Scholarship Recipient"
+    },
     {
       year: "2019",
       milestone: "Mathematical Foundations",
@@ -237,13 +244,13 @@ export const bijonConfig = {
     },
     {
       year: "2023",
-      milestone: "Statistical AI Models",
-      description: "Advanced statistical analysis and scalable systems",
+      milestone: "Created AI platform for NEOM",
+      description: "Advanced analytical platform and scalable systems",
       testimonial: "Shubham Dubey",
       achievement: "Built statistical AI models for finance"
     },
     {
-      year: "2024",
+      year: "2025",
       milestone: "Generative AI Pioneer",
       description: "Browser-based LLMs and WebLLM innovation",
       testimonial: "Industry Recognition",

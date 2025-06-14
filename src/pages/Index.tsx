@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ExpertiseSection from '@/components/ExpertiseSection';
+import FloatingThemeToggle from '@/components/FloatingThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
@@ -125,6 +126,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Floating Theme Toggle */}
+      <FloatingThemeToggle />
     </div>
   );
 };
