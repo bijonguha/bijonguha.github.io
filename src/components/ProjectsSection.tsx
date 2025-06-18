@@ -134,7 +134,7 @@ const ProjectsSection = () => {
                       onClick={() => {
                         const demoUrls = {
                           1: 'https://browsermind.vercel.app/',
-                          2: 'https://stable-chat-demo.vercel.app/',
+                          2: 'https://stablechat.vercel.app/',
                           3: 'https://github.com/bijonguha/jira_backend',
                           4: 'https://mistermd.vercel.app/'
                         };
