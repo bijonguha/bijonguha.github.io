@@ -1,0 +1,48 @@
+Agentic AI Product
+
+InterviewValley
+Role: Generative AI Engineer
+
+Description : Generate Perfect Interview
+Plan in Minutes
+Transform your hiring process for FREE with AI-generated, comprehensive interview questions tailored to specific candidates and roles. Get deep technical questions, evaluation criteria, and interviewer guidance instantly.
+
+Achievement:
+Implemented Agentic AI orchestration to run AI models for generating AI interview rubric (Please efine this more)
+
+
+Impact: (think of an impact by yourself)
+
+Python
+react
+Langraph
+Agentic AI
+CI/CD
+
+Key Features:
+AI-Powered Generation
+Multi-agent system creates deep, non-generic technical questions tailored to each candidate.
+
+Precision Targeting
+Questions specifically designed based on candidate experience and job requirements analysis.
+
+Time Efficient
+Generate comprehensive interview plans in minutes, not hours of manual preparation.
+
+Interviewer Guidance
+Complete evaluation criteria, red flags, and follow-up questions for consistent assessment.
+
+Quality Assured
+Built-in question evaluation ensures relevance, appropriate difficulty, and technical depth.
+
+Comprehensive Reports
+Detailed interview plans with structured sections, timing, and candidate insights.
+
+Performance Metric
+
+Iterview rubric in 3 minutes or less
+
+Super less token usage(refine this)
+
+Product as a service
+

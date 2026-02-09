@@ -2,8 +2,9 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, GitBranch, Zap, Shield, Target, Code } from 'lucide-react';
+import { ExternalLink, GitBranch, Zap, Shield, Target, Code, Zap as Robot } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
+import './ProjectsSection.css';
 
 const ProjectsSection = () => {
   const getProjectIcon = (category: string) => {
@@ -16,6 +17,8 @@ const ProjectsSection = () => {
         return <Target className="w-6 h-6" />;
       case 'Developer Tools':
         return <Code className="w-6 h-6" />;
+      case 'Agentic AI':
+        return <Robot className="w-6 h-6" />;
       default:
         return <Shield className="w-6 h-6" />;
     }
@@ -45,8 +48,13 @@ const ProjectsSection = () => {
                     <Badge variant="secondary" className="px-3 py-1">
                       {project.category}
                     </Badge>
+                    {project.isUnderDevelopment && (
+                      <Badge className="animate-pulse bg-amber-500 hover:bg-amber-600 px-3 py-1">
+                        Under Development
+                      </Badge>
+                    )}
                   </div>
-                  
+
                   <CardTitle className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
                     {project.name}
                   </CardTitle>
@@ -128,40 +136,50 @@ const ProjectsSection = () => {
                   })()}
 
                   <div className="flex gap-3 mt-6">
-                    <Button 
-                      size="sm" 
-                      className="flex-1"
-                      onClick={() => {
-                        const demoUrls = {
-                          1: 'https://browsermind.vercel.app/',
-                          2: 'https://stablechat.vercel.app/',
-                          3: 'https://github.com/bijonguha/jira_backend',
-                          4: 'https://mistermd.vercel.app/'
-                        };
-                        const url = demoUrls[project.id as keyof typeof demoUrls] || '#';
-                        if (url !== '#') window.open(url, '_blank');
-                      }}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      {project.id === 3 ? 'Live Demo' : 'Live App'}
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="flex-1"
-                      onClick={() => {
-                        const codeUrls = {
-                          1: 'https://github.com/bijonguha/browsermind',
-                          2: 'https://github.com/bijonguha/Stable-Chat-UI',
-                          3: 'https://github.com/bijonguha/jira_backend',
-                          4: 'https://github.com/bijonguha/mistermd'
-                        };
-                        const url = codeUrls[project.id as keyof typeof codeUrls] || '#';
-                        if (url !== '#') window.open(url, '_blank');
-                      }}
-                    >
-                      View Code
-                    </Button>
+                    {project.isUnderDevelopment ? (
+                      <div className="w-full p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center">
+                        <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">
+                          🚀 Coming Soon - Live Demo & Code
+                        </p>
+                      </div>
+                    ) : (
+                      <>
+                        <Button
+                          size="sm"
+                          className="flex-1"
+                          onClick={() => {
+                            const demoUrls = {
+                              1: 'https://browsermind.vercel.app/',
+                              2: 'https://stablechat.vercel.app/',
+                              3: 'https://github.com/bijonguha/jira_backend',
+                              4: 'https://mistermd.vercel.app/'
+                            };
+                            const url = demoUrls[project.id as keyof typeof demoUrls] || '#';
+                            if (url !== '#') window.open(url, '_blank');
+                          }}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          {project.id === 3 ? 'Live Demo' : 'Live App'}
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1"
+                          onClick={() => {
+                            const codeUrls = {
+                              1: 'https://github.com/bijonguha/browsermind',
+                              2: 'https://github.com/bijonguha/Stable-Chat-UI',
+                              3: 'https://github.com/bijonguha/jira_backend',
+                              4: 'https://github.com/bijonguha/mistermd'
+                            };
+                            const url = codeUrls[project.id as keyof typeof codeUrls] || '#';
+                            if (url !== '#') window.open(url, '_blank');
+                          }}
+                        >
+                          View Code
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </CardContent>
               </div>
