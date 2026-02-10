@@ -177,7 +177,7 @@ const Index = () => {
       <footer className="py-8 bg-muted/30 border-t">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            © 2024 {bijonConfig.personal.name}. Building AI systems from first principles to production scale.
+            © {new Date().getFullYear()} {bijonConfig.personal.name}. Building AI systems from first principles to production scale.
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             {bijonConfig.seo.metaDescription}
