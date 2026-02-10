@@ -89,94 +89,6 @@ export const bijonConfig = {
   projects: [
     {
       id: 1,
-      name: "Browsermind",
-      category: "Browser-Based LLMs",
-      role: "Generative AI Engineer",
-      description: "Revolutionary WebLLM implementation enabling AI models to run locally in browsers",
-      achievement: "Implemented WebLLM to run AI models locally with zero server dependency",
-      impact: "100% privacy-preserving AI chat with 5 different models",
-      techStack: ["WebLLM", "JavaScript", "Transformer.js", "WASM"],
-      features: [
-        "Local model execution",
-        "5 AI models support",
-        "Zero data transmission",
-        "Real-time inference"
-      ],
-      metrics: {
-        privacyScore: "100%",
-        modelsSupported: 5,
-        loadTime: "< 3s",
-        accuracy: "95%+"
-      }
-    },
-    {
-      id: 2,
-      name: "Stable Chat",
-      category: "AI Infrastructure", 
-      role: "AI Systems Architect",
-      description: "Universal AI endpoint management system for seamless integration",
-      achievement: "Built scalable AI infrastructure supporting multiple AI service providers",
-      impact: "Seamless integration with any AI service through unified API",
-      techStack: ["Node.js", "Docker", "Kubernetes", "OpenAI API", "Claude API"],
-      features: [
-        "Universal AI endpoints",
-        "Auto-scaling infrastructure", 
-        "Multi-provider support",
-        "Real-time monitoring"
-      ],
-      metrics: {
-        uptime: "99.9%",
-        responseTime: "< 200ms",
-        providers: "5+",
-        requests: "1M+/month"
-      }
-    },
-    {
-      id: 3,
-      name: "Mr. Agile - Jira Copilot",
-      category: "AI-Powered Tools",
-      role: "AI/ML Engineer", 
-      description: "Intelligent Jira integration with AI-powered story estimation",
-      achievement: "OpenAI integration for automated agile workflows and story estimation",
-      impact: "Reduced estimation time by 80% with AI-powered insights",
-      techStack: ["OpenAI GPT-4", "Jira API", "React", "Python", "FastAPI"],
-      features: [
-        "Automated story estimation",
-        "Smart sprint planning",
-        "Risk assessment", 
-        "Team productivity insights"
-      ],
-      metrics: {
-        timeSaved: "80%",
-        accuracy: "92%",
-        teamsUsing: "50+",
-        storiesProcessed: "10K+"
-      }
-    },
-    {
-      id: 4,
-      name: "MisterMD",
-      category: "Developer Tools",
-      role: "Full-Stack Developer & UI/UX Engineer",
-      description: "Zero-installation markdown editor that transforms writing with live preview and professional features",
-      achievement: "Built a production-ready markdown editor with real-time rendering and advanced diagram support",
-      impact: "Empowering 10K+ developers monthly with instant, professional documentation tools",
-      techStack: ["React", "Next.js", "TypeScript", "Monaco Editor", "Tailwind CSS"],
-      features: [
-        "Real-time markdown preview",
-        "Advanced diagram support (Mermaid, Chart.js)",
-        "Zero installation required",
-        "Export to PDF/HTML/DOCX"
-      ],
-      metrics: {
-        lighthouse: "100/100",
-        renderTime: "< 10ms",
-        installTime: "0 sec",
-        countries: "15+"
-      }
-    },
-    {
-      id: 5,
       name: "InterviewValley",
       category: "Agentic AI",
       role: "Generative AI Engineer",
@@ -199,6 +111,94 @@ export const bijonConfig = {
         tokenEfficiency: "Optimized",
         deliveryModel: "SaaS",
         accuracy: "Deep & Relevant"
+      }
+    },
+    {
+      id: 2,
+      name: "MisterMD",
+      category: "Developer Tools",
+      role: "Full-Stack Developer & UI/UX Engineer",
+      description: "Zero-installation markdown editor that transforms writing with live preview and professional features",
+      achievement: "Built a production-ready markdown editor with real-time rendering and advanced diagram support",
+      impact: "Empowering 10K+ developers monthly with instant, professional documentation tools",
+      techStack: ["React", "Next.js", "TypeScript", "Monaco Editor", "Tailwind CSS"],
+      features: [
+        "Real-time markdown preview",
+        "Advanced diagram support (Mermaid, Chart.js)",
+        "Zero installation required",
+        "Export to PDF/HTML/DOCX"
+      ],
+      metrics: {
+        lighthouse: "100/100",
+        renderTime: "< 10ms",
+        installTime: "0 sec",
+        countries: "15+"
+      }
+    },
+    {
+      id: 3,
+      name: "Browsermind",
+      category: "Browser-Based LLMs",
+      role: "Generative AI Engineer",
+      description: "Revolutionary WebLLM implementation enabling AI models to run locally in browsers",
+      achievement: "Implemented WebLLM to run AI models locally with zero server dependency",
+      impact: "100% privacy-preserving AI chat with 5 different models",
+      techStack: ["WebLLM", "JavaScript", "Transformer.js", "WASM"],
+      features: [
+        "Local model execution",
+        "5 AI models support",
+        "Zero data transmission",
+        "Real-time inference"
+      ],
+      metrics: {
+        privacyScore: "100%",
+        modelsSupported: 5,
+        loadTime: "< 3s",
+        accuracy: "95%+"
+      }
+    },
+    {
+      id: 4,
+      name: "Stable Chat",
+      category: "AI Infrastructure",
+      role: "AI Systems Architect",
+      description: "Universal AI endpoint management system for seamless integration",
+      achievement: "Built scalable AI infrastructure supporting multiple AI service providers",
+      impact: "Seamless integration with any AI service through unified API",
+      techStack: ["Node.js", "Docker", "Kubernetes", "OpenAI API", "Claude API"],
+      features: [
+        "Universal AI endpoints",
+        "Auto-scaling infrastructure",
+        "Multi-provider support",
+        "Real-time monitoring"
+      ],
+      metrics: {
+        uptime: "99.9%",
+        responseTime: "< 200ms",
+        providers: "5+",
+        requests: "1M+/month"
+      }
+    },
+    {
+      id: 5,
+      name: "Mr. Agile - Jira Copilot",
+      category: "AI-Powered Tools",
+      role: "AI/ML Engineer",
+      description: "Intelligent Jira integration with AI-powered story estimation",
+      achievement: "OpenAI integration for automated agile workflows and story estimation",
+      impact: "Reduced estimation time by 80% with AI-powered insights",
+      techStack: ["OpenAI GPT-4", "Jira API", "React", "Python", "FastAPI"],
+      features: [
+        "Automated story estimation",
+        "Smart sprint planning",
+        "Risk assessment",
+        "Team productivity insights"
+      ],
+      metrics: {
+        timeSaved: "80%",
+        accuracy: "92%",
+        teamsUsing: "50+",
+        storiesProcessed: "10K+"
       }
     }
   ],
