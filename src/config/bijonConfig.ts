@@ -15,9 +15,10 @@ export const bijonConfig = {
   
   companies: [
     "IBM Labs",
-    "Siemens", 
-    "John Deere",
-    "JPMC"
+    "Siemens",
+    "JP Morgan",
+    "Compass Digital",
+    "Zensar"
   ],
 
   testimonials: [
@@ -43,7 +44,7 @@ export const bijonConfig = {
       id: 3,
       name: "Shubham Dubey",
       position: "Site Engineer",
-      company: "JPMC",
+      company: "JP Morgan",
       rating: 5,
       text: "Delivered actionable insights through advanced statistical analysis. His deep understanding of mathematical foundations sets him apart.",
       category: "Statistical Analysis"
@@ -358,6 +359,6 @@ export const bijonConfig = {
       "WebLLM Pioneer",
       "AI Systems Architect"
     ],
-    metaDescription: "Bijon Guha - Generative AI Engineer with proven expertise in LLMs, computer vision, and production ML. Endorsed by leaders at IBM, Siemens, John Deere, and JPMC. Building AI systems from theory to production."
+    metaDescription: "Bijon Guha - Generative AI Engineer with proven expertise in LLMs, computer vision, and production ML. Endorsed by leaders at IBM, Siemens, JP Morgan, Compass Digital, and Zensar. Building AI systems from theory to production."
   }
 };
