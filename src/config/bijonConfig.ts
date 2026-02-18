@@ -93,9 +93,9 @@ export const bijonConfig = {
       name: "InterviewValley",
       category: "Agentic AI",
       role: "Generative AI Engineer",
-      description: "AI-powered interview preparation platform generating perfect interview plans in minutes using multi-agent orchestration",
-      achievement: "Implemented Agentic AI orchestration to run multiple AI models for generating comprehensive interview rubrics with deep technical questions",
-      impact: "Transform hiring process with AI-generated interview plans including technical questions, evaluation criteria, and interviewer guidance in 3 minutes or less",
+      description: "Multi-agent AI platform that generates complete interview plans in under 3 minutes.",
+      achievement: "Agentic AI orchestration across multiple models — delivering deep technical rubrics, not generic questions.",
+      impact: "Full interview plan: technical questions, evaluation criteria & interviewer guidance. Ready in 3 minutes.",
       isUnderDevelopment: true,
       techStack: ["Python", "React", "LangGraph", "Agentic AI", "CI/CD", "OpenAI API"],
       features: [

@@ -79,9 +79,9 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mt-6">
+                  <div className="flex flex-wrap gap-x-3 gap-y-2 mt-16 pt-4 border-t border-border/40">
                     {project.techStack.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="text-xs">
+                      <Badge key={techIndex} variant="outline" className="text-xs font-medium px-3 py-1.5">
                         {tech}
                       </Badge>
                     ))}
