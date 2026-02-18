@@ -137,11 +137,16 @@ const ProjectsSection = () => {
 
                   <div className="flex gap-3 mt-6">
                     {project.isUnderDevelopment ? (
-                      <div className="w-full p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center">
+                      <a
+                        href="https://www.interviewvalley.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center hover:bg-amber-500/20 transition-colors"
+                      >
                         <p className="text-sm font-semibold text-amber-700 dark:text-amber-400">
-                          🚀 Coming Soon - Live Demo & Code
+                          🚀 Coming Soon - Beta Link
                         </p>
-                      </div>
+                      </a>
                     ) : (
                       <>
                         <Button
