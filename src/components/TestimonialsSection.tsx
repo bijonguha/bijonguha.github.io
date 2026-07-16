@@ -1,8 +1,9 @@
 
-import { Linkedin, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { bijonConfig } from '@/config/bijonConfig';
+import LinkedInIcon from '@/components/icons/LinkedInIcon';
 
 const getInitials = (name: string) =>
   name
@@ -47,7 +48,7 @@ const TestimonialsSection = () => {
                       className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors"
                     >
                       {testimonial.name}
-                      <Linkedin className="w-3.5 h-3.5 text-muted-foreground" />
+                      <LinkedInIcon className="w-3.5 h-3.5" />
                     </a>
                     <div className="text-sm text-muted-foreground">
                       {testimonial.position} @ {testimonial.company}
