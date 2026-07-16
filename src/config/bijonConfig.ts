@@ -24,66 +24,69 @@ export const bijonConfig = {
   testimonials: [
     {
       id: 1,
-      name: "Saurabh Srivastava",
-      position: "AI Architect",
-      company: "IBM Labs",
-      rating: 5,
-      text: "Bijon's expertise in AI and Advanced analytics is brilliant. Customers always appreciate the competent knowledge and his ability to make ML models production-ready with better precision.",
-      category: "AI Architecture"
-    },
-    {
-      id: 2,
       name: "Ritvik Raj",
-      position: "Architect", 
+      position: "Software Architect",
       company: "Siemens",
-      rating: 5,
-      text: "Strategic mindset and expertise in AI/ML have always impressed me. Bijon delivers innovative solutions that bridge theory and practical implementation.",
+      linkedin: "https://www.linkedin.com/in/ritvik-raj-7a960a37/",
+      date: "February 2025",
+      relationship: "Ritvik managed Bijon directly",
+      text: "Working with you has been an absolute pleasure, and I've learned so much from our collaboration. Your ability to tackle challenges with a clear, strategic mindset and your expertise in AI/ML, Generative AI, and cloud architecture have always impressed me. Beyond your technical skills, what stands out the most is your willingness to share knowledge and support your team. You bring a positive energy to every project, and your dedication to delivering high-quality solutions is truly inspiring. I have no doubt that you will continue to achieve great things, and any team would be lucky to have you.",
       category: "Strategic AI/ML"
     },
     {
-      id: 3,
+      id: 2,
       name: "Shubham Dubey",
-      position: "Site Engineer",
-      company: "JP Morgan",
-      rating: 5,
-      text: "Delivered actionable insights through advanced statistical analysis. His deep understanding of mathematical foundations sets him apart.",
+      position: "SRE3-AVP",
+      company: "JPMorganChase",
+      linkedin: "https://www.linkedin.com/in/shubham-dubey-devops/",
+      date: "June 2024",
+      relationship: "Shubham worked with Bijon on the same team",
+      text: "I had the pleasure of working with Bijon on the NEOM project. As a DevOps Engineer, I collaborated closely with him, who consistently delivered actionable insights through advanced statistical analysis and AI models. He helped in seamless integration of complex data models into our production environment, ensuring robust and scalable systems. Bijon is definitely innovative, dedicated, and a great team player. I wholeheartedly endorse him.",
       category: "Statistical Analysis"
     },
     {
+      id: 3,
+      name: "Saurabh Srivastava",
+      position: "Senior AI Architect",
+      company: "IBM Labs",
+      linkedin: "https://www.linkedin.com/in/saurabh-srivastava-56039217/",
+      date: "July 2022",
+      relationship: "Saurabh was senior to Bijon but didn't manage him directly",
+      text: "Bijon's expertise in AI and advanced analytics is brilliant. The level of competent knowledge he demonstrated during AI/ML projects is always appreciated by customers. He always focuses on innovating new aspects of AI/ML and implementing them very effectively in a short span of time. Apart from being an expert in data science, Bijon is highly approachable and always willing to help his team members and find the best solutions to problems. A very knowledgeable and very good team player, always a pleasure to work with.",
+      category: "AI Architecture"
+    },
+    {
       id: 4,
-      name: "Indrajit Kar",
-      position: "Director",
-      company: "Zensar",
-      rating: 5,
-      text: "He makes ML models production-ready with better precision. Outstanding work in bringing AI systems from concept to deployment.",
-      category: "Production ML"
+      name: "Nimai Chand Das Adhikari",
+      position: "Principal Data Scientist",
+      company: "Labcorp",
+      linkedin: "https://www.linkedin.com/in/nimai-chand-das-adhikari-932396ba/",
+      date: "September 2021",
+      relationship: "Nimai Chand managed Bijon directly",
+      text: "An extremely talented and highly motivated IITian. If any issue comes up in the field of computer vision, he is the best person to deal with. Bijon gives solutions with the utmost dedication and uniqueness — the kind of work that could itself be a contender for publication. His key skills are problem solving, customer engagement, and unique problem-solving that comes from strong technical foundations. He is surely an asset to any team.",
+      category: "Computer Vision"
     },
     {
       id: 5,
-      name: "Nimai Chand",
-      position: "AI Engineer",
-      company: "John Deere",
-      rating: 5,
-      text: "Best person for Computer Vision projects. His solutions are publication-worthy and deliver real business impact.",
-      category: "Computer Vision"
+      name: "Indrajit Kar",
+      position: "Managing Director",
+      company: "AI Native Business",
+      linkedin: "https://www.linkedin.com/in/indrajit-kar/",
+      date: "March 2021",
+      relationship: "Indrajit managed Bijon directly",
+      text: "Bijon worked in my AI team for more than half a year and was one of the key members in our deep learning and research projects. His credibility and skills in machine learning, optical character recognition, computer vision, and interpreting sensor data are unmatched. He does his own research to solve complex computer vision problems, and even after solving them he isn't satisfied until he's optimized the algorithms and made them production-ready. There's a huge difference between production data and test data — with Bijon's AI and ML skills, we were able to reduce the effort of production deployment and get better precision from our models in production. His ability to collaborate as well as guide senior resources on the team is commendable. I'm confident he'll do a fantastic job wherever he's placed.",
+      category: "Production ML"
     },
     {
       id: 6,
       name: "Sujit Ojha",
-      position: "Architect",
-      company: "Pratt and Whitney",
-      rating: 5,
-      text: "Exceptional work in mathematical equations and handwriting recognition. Deep theoretical knowledge combined with practical skills.",
+      position: "Senior Manager, Data Science",
+      company: "Ex-GE Aviation",
+      linkedin: "https://www.linkedin.com/in/sujitojha/",
+      date: "May 2020",
+      relationship: "Sujit was Bijon's mentor",
+      text: "It's rare that you come across standout talent like Bijon. I've worked alongside him for close to a year now. He has shown his prowess in deep learning, computer vision, and machine learning — one of my favorites being his work in handwriting recognition involving mathematical equations. Bijon is a valuable team member and carries a great demeanor on every project. His willingness to learn and take on new challenges is something to be desired in any professional.",
       category: "Mathematical Foundations"
-    },
-    {
-      id: 7,
-      name: "Developer Community",
-      position: "Open Source Contributors",
-      company: "Global Developer Network",
-      rating: 5,
-      text: "It's rare that you come across standout talent like Bijon. His ability to create user-friendly, performant tools shows exceptional engineering skills and attention to developer experience.",
-      category: "Developer Tools"
     }
   ],
 
@@ -252,7 +255,7 @@ export const bijonConfig = {
       year: "2020", 
       milestone: "Computer Vision Mastery",
       description: "Publication-worthy computer vision solutions",
-      testimonial: "Nimai Chand",
+      testimonial: "Nimai Chand Das Adhikari",
       achievement: "Developed enterprise-grade CV systems"
     },
     {
