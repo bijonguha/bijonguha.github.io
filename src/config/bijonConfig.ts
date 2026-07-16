@@ -278,7 +278,7 @@ export const bijonConfig = {
     },
     {
       year: "2025",
-      milestone: "Generative AI Pioneer",
+      milestone: "Generative AI Expert",
       description: "Browser-based LLMs and WebLLM innovation",
       testimonial: "Industry Recognition",
       achievement: "Launched Browsermind platform"

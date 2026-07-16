@@ -26,7 +26,8 @@ const ExpertiseSection = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/30">
+    <>
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -37,7 +38,7 @@ const ExpertiseSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8">
           {bijonConfig.expertise.coreAreas.map((area, index) => (
             <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-primary">
               <CardHeader className="pb-4">
@@ -96,55 +97,61 @@ const ExpertiseSection = () => {
             </Card>
           ))}
         </div>
+      </div>
+    </section>
 
-        {/* Interactive timeline */}
-        <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-8 border">
-          <h3 className="text-3xl font-bold text-center mb-12">
-            From Theory to Production Timeline
-          </h3>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20 md:block hidden"></div>
-            
-            <div className="space-y-12">
-              {bijonConfig.timeline.map((item, index) => (
-                <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:gap-8 gap-4`}>
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-left`}>
-                    <Card className="inline-block max-w-md hover:shadow-lg transition-all duration-300">
-                      <CardContent className="p-6">
-                        <div className="font-bold text-2xl text-primary mb-2">
-                          {item.year}
-                        </div>
-                        <h4 className="font-semibold text-lg mb-2">
-                          {item.milestone}
-                        </h4>
-                        <p className="text-muted-foreground mb-3">
-                          {item.description}
-                        </p>
-                        <div className="text-sm">
-                          <span className="font-semibold">Achievement:</span>
-                          <br />
-                          {item.achievement}
-                        </div>
-                        <div className="mt-3 text-xs text-muted-foreground">
-                          Testimonial: {item.testimonial}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  
-                  {/* Timeline dot */}
-                  <div className="relative z-10 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg md:block hidden"></div>
-                  
-                  <div className="flex-1 md:block hidden"></div>
+    {/* Interactive timeline — full-bleed anchor section (fixed dark band, does not flip with theme) */}
+    <section className="py-20 bg-slate-900 text-slate-50">
+      <div className="container mx-auto px-6">
+        <h3 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          From Theory to Production Timeline
+        </h3>
+        <p className="text-slate-300 text-center max-w-2xl mx-auto mb-12">
+          Seven years, one throughline: mathematical foundations to production AI systems.
+        </p>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white/15 md:block hidden"></div>
+
+          <div className="space-y-12">
+            {bijonConfig.timeline.map((item, index) => (
+              <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:gap-8 gap-4`}>
+                <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-left`}>
+                  <Card className="inline-block max-w-md hover:shadow-lg transition-all duration-300 bg-card text-card-foreground">
+                    <CardContent className="p-6">
+                      <div className="font-bold text-2xl text-primary mb-2">
+                        {item.year}
+                      </div>
+                      <h4 className="font-semibold text-lg mb-2">
+                        {item.milestone}
+                      </h4>
+                      <p className="text-muted-foreground mb-3">
+                        {item.description}
+                      </p>
+                      <div className="text-sm">
+                        <span className="font-semibold">Achievement:</span>
+                        <br />
+                        {item.achievement}
+                      </div>
+                      <div className="mt-3 text-xs text-muted-foreground">
+                        Testimonial: {item.testimonial}
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-              ))}
-            </div>
+
+                {/* Timeline dot */}
+                <div className="relative z-10 w-6 h-6 bg-white rounded-full border-4 border-slate-900 shadow-lg md:block hidden"></div>
+
+                <div className="flex-1 md:block hidden"></div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
+    </>
   );
 };
 
