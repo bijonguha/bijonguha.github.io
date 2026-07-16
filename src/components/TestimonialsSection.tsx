@@ -1,7 +1,18 @@
 
-import { Star } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { bijonConfig } from '@/config/bijonConfig';
+import LinkedInIcon from '@/components/icons/LinkedInIcon';
+
+const getInitials = (name: string) =>
+  name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
 
 const TestimonialsSection = () => {
   return (
@@ -12,45 +23,50 @@ const TestimonialsSection = () => {
             Peer Reviews & Industry Trust
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Endorsed by senior AI leaders from Fortune 500 companies who have experienced my expertise firsthand
+            Real LinkedIn recommendations from senior AI leaders who have worked with me directly
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {bijonConfig.testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  <div className="text-sm font-mono text-muted-foreground mb-2">
-                    ┌─ PEER REVIEW ──────────────────────┐
+            <Card
+              key={testimonial.id}
+              className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary/70"
+            >
+              <CardContent className="p-6 flex flex-col h-full">
+                <Quote className="absolute top-5 right-5 w-8 h-8 text-primary/10" />
+
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="flex-none w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
+                    {getInitials(testimonial.name)}
                   </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      ))}
+                  <div className="min-w-0">
+                    <a
+                      href={testimonial.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors"
+                    >
+                      {testimonial.name}
+                      <LinkedInIcon className="w-3.5 h-3.5" />
+                    </a>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.position} @ {testimonial.company}
                     </div>
-                    <span className="text-sm text-muted-foreground">
-                      ({testimonial.category})
-                    </span>
                   </div>
                 </div>
 
-                <blockquote className="text-foreground mb-4 leading-relaxed">
+                <blockquote className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
                   "{testimonial.text}"
                 </blockquote>
 
-                <div className="border-t pt-4">
-                  <div className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.position} @ {testimonial.company}
-                  </div>
-                </div>
-
-                <div className="text-sm font-mono text-muted-foreground mt-4">
-                  └─────────────────────────────────────┘
+                <div className="pt-4 border-t flex items-center justify-between gap-3">
+                  <span className="text-xs text-muted-foreground">
+                    {testimonial.relationship} · {testimonial.date}
+                  </span>
+                  <Badge variant="secondary" className="text-[10px] flex-none">
+                    {testimonial.category}
+                  </Badge>
                 </div>
               </CardContent>
             </Card>

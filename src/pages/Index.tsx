@@ -6,8 +6,9 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ExpertiseSection from '@/components/ExpertiseSection';
 import FloatingThemeToggle from '@/components/FloatingThemeToggle';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, ExternalLink, Menu, X } from 'lucide-react';
+import { Mail, Github, ExternalLink, Menu, X } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
+import LinkedInIcon from '@/components/icons/LinkedInIcon';
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -153,7 +154,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              <Linkedin className="w-6 h-6" />
+              <LinkedInIcon className="w-6 h-6" />
             </a>
             <a 
               href={`https://${bijonConfig.contact.github}`} 
