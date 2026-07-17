@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <clipPath id="cargill-circle-clip">
+      <circle cx="128" cy="128" r="126" />
+    </clipPath>
+  </defs>
+  <circle cx="128" cy="128" r="126" fill="#000000" />
+  <g clip-path="url(#cargill-circle-clip)">
+    <path
+      d="M -10 128
+         C -10 86, 70 84, 150 84
+         C 195 84, 224 104, 224 128
+         C 224 152, 195 172, 150 172
+         C 70 172, -10 170, -10 128 Z"
+      fill="#ffffff"
+    />
+  </g>
+  <text
+    x="128"
+    y="135"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    font-size="23"
+    letter-spacing="0"
+    fill="#000000"
+  >CARGILL</text>
+</svg>
