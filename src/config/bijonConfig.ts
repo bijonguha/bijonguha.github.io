@@ -185,12 +185,12 @@ export const bijonConfig = {
     },
     {
       id: 5,
-      name: "Mr. Agile - Jira Copilot",
+      name: "Jira Copilot",
       category: "AI-Powered Tools",
-      role: "AI/ML Engineer",
-      description: "Intelligent Jira integration with AI-powered story estimation",
-      achievement: "OpenAI integration for automated agile workflows and story estimation",
-      impact: "Reduced estimation time by 80% with AI-powered insights",
+      role: "Lead Developer",
+      description: "Intelligent Jira integration with AI-powered story estimation, built as part of Siemens' internal GenAI Marketplace",
+      achievement: "Led development of the GenAI Marketplace's Jira Copilot tool, deployed on AWS and integrated with the Atlassian Jira dashboard for automated story updates",
+      impact: "Reduced estimation time by 80% with AI-powered insights, part of a marketplace reaching 450+ active users",
       techStack: ["OpenAI GPT-4", "Jira API", "React", "Python", "FastAPI"],
       features: [
         "Automated story estimation",
@@ -213,25 +213,110 @@ export const bijonConfig = {
         name: "Generative AI",
         subAreas: ["LLMs (GPT, Claude, Llama)", "Diffusion Models", "Fine-tuning & RLHF", "Prompt Engineering"],
         level: "Expert",
-        yearsExperience: 3
+        yearsExperience: 3,
+        useCases: [
+          {
+            name: "Heidi — Digital Healthcare Assistant",
+            client: "Compass Digital",
+            logo: "compass-digital",
+            role: "Lead Developer",
+            description: "Led development of Heidi, a digital healthcare assistant deployed across 500+ Compass Digital healthcare facilities. Integrated Text2SQL over a database handling 1M+ transactions/day, with row-level security for constrained LLM execution."
+          },
+          {
+            name: "Jira Copilot",
+            client: "Siemens",
+            logo: "siemens",
+            role: "Lead Developer",
+            description: "Conceptualized and led a GenAI marketplace for internal Siemens applications. Built Jira Copilot and EstiMATE, deployed on AWS at MVP scale to 450+ active users, integrated with the Atlassian Jira dashboard for automated story updates."
+          },
+          {
+            name: "Trainbrain",
+            client: "Compass Digital",
+            logo: "compass-digital",
+            role: "Generative AI Engineer",
+            description: "Built a multi-agent LangGraph system, productized from a hackathon POC, that auto-generates role-based training plans, TTS videos, adaptive assessments, and compliance reports."
+          }
+        ]
       },
       {
-        name: "Computer Vision", 
+        name: "Computer Vision",
         subAreas: ["OCR & Handwriting Recognition", "Object Detection", "Image Classification", "Video Analysis"],
         level: "Expert",
-        yearsExperience: 4
+        yearsExperience: 4,
+        useCases: [
+          {
+            name: "Airport Face Detection",
+            client: "Bosch",
+            logo: "bosch",
+            role: "Video Analytics Team",
+            description: "Developed object detection systems using YOLO and RetinaFace with custom retraining. Implemented image classification using transfer learning and FastAI."
+          },
+          {
+            name: "Drone-Vision AI Service",
+            client: "NEOM",
+            logo: "neom",
+            role: "Drone-Vision AI Service Deployment Lead",
+            description: "Established a scalable deep learning service template covering 10+ use cases on AWS. Built AWS Lambda services and CloudFormation templates for a Siemens-delivered NEOM engagement; mentored junior developers transitioning from notebooks to production code."
+          },
+          {
+            name: "Garry — Label OCR System",
+            client: "Cargill",
+            logo: "cargill",
+            role: "Intelligent Automation Team",
+            description: "Developed a deep learning service for label entity extraction. Built an MVP that evolved into a full label-verification automation system, benchmarking OCR solutions and integrating FastAPI, DB migrations, and CI/CD pipelines."
+          },
+          {
+            name: "Automotive Anomaly Detection Platform",
+            client: "Ford",
+            logo: "ford",
+            role: "Tech Lead",
+            description: "Designed the HLD/LLD and system architecture for a SaaS anomaly-detection platform. Built MQTT, Postgres, DL inference, and monitoring services, processing 10TB+ of data per day at sub-5-second throughput."
+          }
+        ]
       },
       {
         name: "Production ML",
         subAreas: ["Model Optimization", "Deployment Strategies", "MLOps", "System Architecture"],
-        level: "Expert", 
-        yearsExperience: 7
+        level: "Expert",
+        yearsExperience: 7,
+        useCases: [
+          {
+            name: "QpiAI-Pro Deploy",
+            client: "QpiAI",
+            logo: "qpiai",
+            role: "Model Deployment Microservice",
+            description: "Built QpiAI-Pro Deploy to manage the deployment and scaling of AI models. Implemented quantization, pruning, and distillation techniques; configured OpenVino and NNCF."
+          },
+          {
+            name: "CKAN Data Platform",
+            client: "Siemens",
+            logo: "siemens",
+            role: "Lead Developer",
+            description: "Developed extensions for an open-source data platform supporting university research partners. Integrated AWS for data uploads and Elastic Search for efficient searching."
+          }
+        ]
       },
       {
         name: "Mathematical Foundations",
         subAreas: ["Statistical Analysis", "Neural Network Theory", "Linear Algebra", "Probability Theory"],
         level: "Expert",
-        yearsExperience: 6
+        yearsExperience: 6,
+        useCases: [
+          {
+            name: "Handwritten Math Equation OCR",
+            client: "Intel",
+            logo: "intel",
+            role: "AI Engineer",
+            description: "Designed an end-to-end OCR system for handwritten mathematical equations using deep learning. Built a plug-and-play Python package with Keras."
+          },
+          {
+            name: "Viva Sense",
+            client: "Bosch",
+            logo: "bosch",
+            role: "AI Engineer",
+            description: "Built a hemoglobin measurement system from PPG (photoplethysmography) signals, productized as Viva Sense."
+          }
+        ]
       }
     ]
   },

@@ -2,8 +2,38 @@
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { Brain, Eye, Cpu, Calculator, Network } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
+
+import boschLogo from '@/assets/logos/bosch.svg';
+import cargillLogo from '@/assets/logos/cargill.svg';
+import qpiaiLogo from '@/assets/logos/qpiai.svg';
+import siemensLogo from '@/assets/logos/siemens.svg';
+import compassDigitalLogo from '@/assets/logos/compass-digital.svg';
+import fordLogo from '@/assets/logos/ford.svg';
+import intelLogo from '@/assets/logos/intel.svg';
+import neomLogo from '@/assets/logos/neom.svg';
+
+const LOGO_MAP: Record<string, string> = {
+  bosch: boschLogo,
+  cargill: cargillLogo,
+  qpiai: qpiaiLogo,
+  siemens: siemensLogo,
+  'compass-digital': compassDigitalLogo,
+  ford: fordLogo,
+  intel: intelLogo,
+  neom: neomLogo,
+};
+
+type UseCase = {
+  name: string;
+  client: string;
+  logo: string;
+  role: string;
+  description: string;
+};
 
 // Hub-and-spoke coordinates for the knowledge graph diagram (viewBox 0 0 900 500)
 const GRAPH_HUB = { x: 450, y: 250 };
@@ -25,6 +55,7 @@ const ExpertiseSection = () => {
   const graphRef = useRef<HTMLDivElement>(null);
   const [graphVisible, setGraphVisible] = useState(false);
   const [activeNode, setActiveNode] = useState<number | null>(null);
+  const [activeUseCase, setActiveUseCase] = useState<UseCase | null>(null);
 
   useEffect(() => {
     const el = graphRef.current;
@@ -261,6 +292,35 @@ const ExpertiseSection = () => {
                     ))}
                   </div>
 
+                  {/* Client use cases — compact logo row, click for details */}
+                  {area.useCases && area.useCases.length > 0 && (
+                    <div className="mt-5 pt-4 border-t border-border/60">
+                      <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                        Used in production at:
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {area.useCases.map((useCase, ucIndex) => (
+                          <Tooltip key={ucIndex}>
+                            <TooltipTrigger asChild>
+                              <button
+                                type="button"
+                                onClick={() => setActiveUseCase(useCase)}
+                                className="w-9 h-9 rounded-full overflow-hidden border border-border grayscale hover:grayscale-0 hover:scale-110 hover:border-primary transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary"
+                                aria-label={`View ${useCase.name} case study`}
+                              >
+                                <img src={LOGO_MAP[useCase.logo]} alt={useCase.client} className="w-full h-full object-cover" />
+                              </button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="font-medium">{useCase.name}</p>
+                              <p className="text-xs text-muted-foreground">{useCase.client}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Add relevant testimonial indicator */}
                   {(() => {
                     const relevantTestimonial = bijonConfig.testimonials.find(t =>
@@ -284,6 +344,30 @@ const ExpertiseSection = () => {
           })}
         </div>
       </div>
+
+      {/* Use case detail modal */}
+      <Dialog open={!!activeUseCase} onOpenChange={(open) => !open && setActiveUseCase(null)}>
+        <DialogContent className="sm:max-w-md">
+          {activeUseCase && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border border-border flex-none">
+                    <img src={LOGO_MAP[activeUseCase.logo]} alt={activeUseCase.client} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <DialogTitle>{activeUseCase.name}</DialogTitle>
+                    <p className="text-sm text-muted-foreground">{activeUseCase.client} · {activeUseCase.role}</p>
+                  </div>
+                </div>
+                <DialogDescription className="text-foreground/90 leading-relaxed pt-2">
+                  {activeUseCase.description}
+                </DialogDescription>
+              </DialogHeader>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
 
     {/* Interactive timeline — full-bleed anchor section (fixed dark band, does not flip with theme) */}
