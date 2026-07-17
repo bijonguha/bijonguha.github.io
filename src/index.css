@@ -248,6 +248,16 @@
     100% { transform: scale(2.4); opacity: 0; }
   }
 
+  /* Knowledge graph hub pulse */
+  .animate-ping-slow {
+    animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping-slow {
+    0% { transform: scale(1); opacity: 0.6; }
+    75%, 100% { transform: scale(1.7); opacity: 0; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .timeline-reveal {
       transition: opacity 0.3s ease-out !important;
@@ -256,8 +266,18 @@
     }
     .timeline-blob,
     .timeline-blob-reverse,
-    .timeline-dot-pulse {
+    .timeline-dot-pulse,
+    .animate-ping-slow {
       animation: none !important;
+    }
+    .graph-node {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: translate(-50%, -50%) !important;
+    }
+    .graph-line {
+      transition: none !important;
+      stroke-dashoffset: 0 !important;
     }
   }
 
