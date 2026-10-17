@@ -7,7 +7,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import WritingSection from '@/components/WritingSection';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, ExternalLink, Menu, X, Download } from 'lucide-react';
+import { Mail, Github, Menu, X, Download } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
 
@@ -160,17 +160,6 @@ const Index = () => {
             >
               <Mail className="w-5 h-5 mr-2" />
               Email me
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-4 text-lg"
-              onClick={() => {
-                window.open(bijonConfig.heroButtons.secondary.url, '_blank');
-              }}
-            >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              {bijonConfig.heroButtons.secondary.label}
             </Button>
           </div>
 
