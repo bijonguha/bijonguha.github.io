@@ -1,5 +1,6 @@
 
-import { Quote } from 'lucide-react';
+import { useState } from 'react';
+import { Pause, Play, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { bijonConfig } from '@/config/bijonConfig';
@@ -14,9 +15,81 @@ const getInitials = (name: string) =>
     .join('')
     .toUpperCase();
 
-const TestimonialsSection = () => {
+type Testimonial = (typeof bijonConfig.testimonials)[number];
+
+const TestimonialCard = ({
+  testimonial,
+  duplicate,
+  expanded,
+  onToggle,
+}: {
+  testimonial: Testimonial;
+  duplicate: boolean;
+  expanded: boolean;
+  onToggle: () => void;
+}) => {
+  const tab = duplicate ? -1 : undefined;
   return (
-    <section className="py-20 bg-muted/30">
+    <Card
+      aria-hidden={duplicate || undefined}
+      className="relative flex-none w-[300px] sm:w-[380px] overflow-hidden border-t-4 border-t-primary/70 self-start"
+    >
+      <CardContent className="p-6 flex flex-col">
+        <Quote className="absolute top-5 right-5 w-8 h-8 text-primary/10" aria-hidden="true" />
+
+        <div className="flex items-start gap-3 mb-4">
+          <div className="flex-none w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
+            {getInitials(testimonial.name)}
+          </div>
+          <div className="min-w-0">
+            <a
+              href={testimonial.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={tab}
+              className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors"
+            >
+              {testimonial.name}
+              <LinkedInIcon className="w-3.5 h-3.5" />
+            </a>
+            <div className="text-sm text-muted-foreground">
+              {testimonial.position} @ {testimonial.company}
+            </div>
+          </div>
+        </div>
+
+        <blockquote className={`text-sm text-foreground/90 leading-relaxed ${expanded ? '' : 'line-clamp-6'}`}>
+          "{testimonial.text}"
+        </blockquote>
+        <button
+          type="button"
+          tabIndex={tab}
+          onClick={onToggle}
+          aria-expanded={expanded}
+          className="self-start mt-2 mb-4 text-sm font-medium text-primary hover:underline"
+        >
+          {expanded ? 'Show less' : 'Read more'}
+        </button>
+
+        <div className="pt-4 border-t flex items-center justify-between gap-3">
+          <span className="text-xs text-muted-foreground">
+            {testimonial.relationship} · {testimonial.date}
+          </span>
+          <Badge variant="secondary" className="text-[10px] flex-none">
+            {testimonial.category}
+          </Badge>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+const TestimonialsSection = () => {
+  const [paused, setPaused] = useState(false);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  return (
+    <section className="py-20 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -27,50 +100,39 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {bijonConfig.testimonials.map((testimonial) => (
-            <Card
-              key={testimonial.id}
-              className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary/70"
-            >
-              <CardContent className="p-6 flex flex-col h-full">
-                <Quote className="absolute top-5 right-5 w-8 h-8 text-primary/10" />
+        <div className="flex justify-end mb-4">
+          <button
+            type="button"
+            onClick={() => setPaused((p) => !p)}
+            aria-label={paused ? 'Play testimonials carousel' : 'Pause testimonials carousel'}
+            className="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-background transition-colors motion-reduce:hidden"
+          >
+            {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+            {paused ? 'Play' : 'Pause'}
+          </button>
+        </div>
 
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="flex-none w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
-                    {getInitials(testimonial.name)}
-                  </div>
-                  <div className="min-w-0">
-                    <a
-                      href={testimonial.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-foreground hover:text-primary transition-colors"
-                    >
-                      {testimonial.name}
-                      <LinkedInIcon className="w-3.5 h-3.5" />
-                    </a>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.position} @ {testimonial.company}
-                    </div>
-                  </div>
-                </div>
-
-                <blockquote className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
-                  "{testimonial.text}"
-                </blockquote>
-
-                <div className="pt-4 border-t flex items-center justify-between gap-3">
-                  <span className="text-xs text-muted-foreground">
-                    {testimonial.relationship} · {testimonial.date}
-                  </span>
-                  <Badge variant="secondary" className="text-[10px] flex-none">
-                    {testimonial.category}
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div
+          className="testimonial-marquee overflow-hidden -mx-6 px-6 py-2"
+          data-paused={paused || expandedId !== null}
+          role="region"
+          aria-label="Recommendations from colleagues"
+        >
+          <div className="testimonial-track flex w-max gap-6 items-start">
+            {[false, true].map((duplicate) =>
+              bijonConfig.testimonials.map((testimonial) => (
+                <TestimonialCard
+                  key={`${duplicate ? 'dup' : 'main'}-${testimonial.id}`}
+                  testimonial={testimonial}
+                  duplicate={duplicate}
+                  expanded={expandedId === testimonial.id}
+                  onToggle={() =>
+                    setExpandedId((id) => (id === testimonial.id ? null : testimonial.id))
+                  }
+                />
+              ))
+            )}
+          </div>
         </div>
 
         {/* Trust metrics */}
@@ -103,10 +165,10 @@ const TestimonialsSection = () => {
             </div>
             <div>
               <div className="text-3xl font-bold text-primary mb-2">
-                {bijonConfig.metrics.successRate}
+                {bijonConfig.metrics.yearsInAI}
               </div>
               <div className="text-sm text-muted-foreground">
-                Production Success Rate
+                Years in AI
               </div>
             </div>
           </div>

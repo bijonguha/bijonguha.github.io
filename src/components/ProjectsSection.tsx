@@ -2,8 +2,9 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, GitBranch, Zap, Shield, Target, Code, Zap as Robot } from 'lucide-react';
+import { ExternalLink, GitBranch, Zap, Shield, Target, Code, Zap as Robot, Sparkles } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
+import ProjectMedia from '@/components/ProjectMedia';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
@@ -19,6 +20,8 @@ const ProjectsSection = () => {
         return <Code className="w-6 h-6" />;
       case 'Agentic AI':
         return <Robot className="w-6 h-6" />;
+      case 'AI Agent Skills':
+        return <Sparkles className="w-6 h-6" />;
       default:
         return <Shield className="w-6 h-6" />;
     }
@@ -89,6 +92,9 @@ const ProjectsSection = () => {
                 </CardHeader>
 
                 <CardContent className="lg:col-span-1 p-8 bg-muted/30">
+                  <div className="mb-6">
+                    <ProjectMedia media={project.media} name={project.name} />
+                  </div>
                   <h4 className="font-semibold text-foreground mb-4">Key Features:</h4>
                   <ul className="space-y-2 mb-6">
                     {project.features.map((feature, featureIndex) => (
@@ -116,8 +122,7 @@ const ProjectsSection = () => {
                     const relevantTestimonial = bijonConfig.testimonials.find(t => 
                       (project.category === 'Browser-Based LLMs' && t.category === 'AI Architecture') ||
                       (project.category === 'AI Infrastructure' && t.category === 'Strategic AI/ML') ||
-                      (project.category === 'AI-Powered Tools' && t.category === 'Statistical Analysis') ||
-                      (project.category === 'Developer Tools' && t.category === 'Developer Tools')
+                      (project.category === 'AI-Powered Tools' && t.category === 'Statistical Analysis')
                     );
                     
                     if (relevantTestimonial) {
@@ -135,10 +140,10 @@ const ProjectsSection = () => {
                     return null;
                   })()}
 
-                  <div className="flex gap-3 mt-6">
-                    {project.isUnderDevelopment ? (
+                  {project.isUnderDevelopment && project.links.live ? (
+                    <div className="flex gap-3 mt-6">
                       <a
-                        href="https://www.interviewvalley.com/"
+                        href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center hover:bg-amber-500/20 transition-colors"
@@ -147,45 +152,26 @@ const ProjectsSection = () => {
                           🚀 Coming Soon - Beta Link
                         </p>
                       </a>
-                    ) : (
-                      <>
-                        <Button
-                          size="sm"
-                          className="flex-1"
-                          onClick={() => {
-                            const demoUrls = {
-                              1: 'https://browsermind.vercel.app/',
-                              2: 'https://stablechat.vercel.app/',
-                              3: 'https://github.com/bijonguha/jira_backend',
-                              4: 'https://mistermd.vercel.app/'
-                            };
-                            const url = demoUrls[project.id as keyof typeof demoUrls] || '#';
-                            if (url !== '#') window.open(url, '_blank');
-                          }}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          {project.id === 3 ? 'Live Demo' : 'Live App'}
+                    </div>
+                  ) : (project.links.live || project.links.code) ? (
+                    <div className="flex gap-3 mt-6">
+                      {project.links.live && (
+                        <Button size="sm" className="flex-1" asChild>
+                          <a href={project.links.live} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Live App
+                          </a>
                         </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="flex-1"
-                          onClick={() => {
-                            const codeUrls = {
-                              1: 'https://github.com/bijonguha/browsermind',
-                              2: 'https://github.com/bijonguha/Stable-Chat-UI',
-                              3: 'https://github.com/bijonguha/jira_backend',
-                              4: 'https://github.com/bijonguha/mistermd'
-                            };
-                            const url = codeUrls[project.id as keyof typeof codeUrls] || '#';
-                            if (url !== '#') window.open(url, '_blank');
-                          }}
-                        >
-                          View Code
+                      )}
+                      {project.links.code && (
+                        <Button variant="outline" size="sm" className="flex-1" asChild>
+                          <a href={project.links.code} target="_blank" rel="noopener noreferrer">
+                            View Code
+                          </a>
                         </Button>
-                      </>
-                    )}
-                  </div>
+                      )}
+                    </div>
+                  ) : null}
                 </CardContent>
               </div>
             </Card>

@@ -112,19 +112,48 @@ export const bijonConfig = {
       ],
       metrics: {
         generationTime: "< 3 min",
-        tokenEfficiency: "Optimized",
-        deliveryModel: "SaaS",
-        accuracy: "Deep & Relevant"
-      }
+        architecture: "Multi-agent"
+      },
+      links: { live: "https://www.interviewvalley.com/" },
+      // Put the file in public/media/ and set src, e.g. "/media/interviewvalley/demo.mp4". Empty src shows a placeholder.
+      media: { type: "gif" as const, src: "", poster: "", alt: "InterviewValley generating an interview plan" }
     },
     {
       id: 2,
+      name: "Content Intelligence",
+      category: "AI Agent Skills",
+      role: "Creator & Lead Engineer",
+      description: "A no-code, skills-based extension for AI coding tools (Kiro, Claude Code, Codex) that explores a live web app on its own and produces product documentation, annotated screenshots and narrated video walkthroughs.",
+      achievement: "Packaged a full content pipeline as portable agent skills: the agent reads the codebase, discovers user personas and workflows, drives a real browser, annotates each screen, writes narration that must pass automatic quality checks, and renders captioned videos. There is no app-specific code.",
+      impact: "Used in production in enterprise healthcare. A full role captured in 1–3 hours of agent time, with 60–90 second narrated videos per topic. No screen recording or voice-over.",
+      techStack: ["Agent Skills", "Playwright MCP", "Claude", "Amazon Polly", "ffmpeg", "Python"],
+      features: [
+        "Autonomous product discovery: personas, journeys and screens",
+        "Annotated screenshots with learner-style captions",
+        "Narrated, captioned walkthrough videos per topic",
+        "Five automatic checks on the narration before it is voiced",
+        "Fingerprinted renders: only changed topics re-render",
+        "A person approves every video before it is published",
+        "Works with any skills-capable AI coding tool"
+      ],
+      metrics: {
+        setupCode: "0 lines",
+        outputs: "Docs + Video",
+        agentTime: "1–3 h",
+        videoPerTopic: "60–90 s"
+      },
+      links: {},
+      // Put the file in public/media/ and set src, e.g. "/media/content-intelligence/demo.mp4". Empty src shows a placeholder.
+      media: { type: "video" as const, src: "", poster: "", alt: "An AI agent exploring a web app and producing an annotated, narrated walkthrough video" }
+    },
+    {
+      id: 3,
       name: "MisterMD",
       category: "Developer Tools",
       role: "Full-Stack Developer & UI/UX Engineer",
       description: "Zero-installation markdown editor that transforms writing with live preview and professional features",
       achievement: "Built a production-ready markdown editor with real-time rendering and advanced diagram support",
-      impact: "Empowering 10K+ developers monthly with instant, professional documentation tools",
+      impact: "Professional documentation in the browser, with live preview and nothing to install",
       techStack: ["React", "Next.js", "TypeScript", "Monaco Editor", "Tailwind CSS"],
       features: [
         "Real-time markdown preview",
@@ -135,12 +164,14 @@ export const bijonConfig = {
       metrics: {
         lighthouse: "100/100",
         renderTime: "< 10ms",
-        installTime: "0 sec",
-        countries: "15+"
-      }
+        installTime: "0 sec"
+      },
+      links: { live: "https://mistermd.vercel.app/", code: "https://github.com/bijonguha/mistermd" },
+      // Put the file in public/media/ and set src, e.g. "/media/mistermd/demo.mp4". Empty src shows a placeholder.
+      media: { type: "gif" as const, src: "", poster: "", alt: "MisterMD editor with live markdown preview" }
     },
     {
-      id: 3,
+      id: 4,
       name: "Browsermind",
       category: "Browser-Based LLMs",
       role: "Generative AI Engineer",
@@ -156,13 +187,14 @@ export const bijonConfig = {
       ],
       metrics: {
         privacyScore: "100%",
-        modelsSupported: 5,
-        loadTime: "< 3s",
-        accuracy: "95%+"
-      }
+        modelsSupported: 5
+      },
+      links: { live: "https://browsermind.vercel.app/", code: "https://github.com/bijonguha/browsermind" },
+      // Put the file in public/media/ and set src, e.g. "/media/browsermind/demo.mp4". Empty src shows a placeholder.
+      media: { type: "gif" as const, src: "", poster: "", alt: "Browsermind chatting with a model running in the browser" }
     },
     {
-      id: 4,
+      id: 5,
       name: "Stable Chat",
       category: "AI Infrastructure",
       role: "AI Systems Architect",
@@ -177,14 +209,15 @@ export const bijonConfig = {
         "Real-time monitoring"
       ],
       metrics: {
-        uptime: "99.9%",
         responseTime: "< 200ms",
-        providers: "5+",
-        requests: "1M+/month"
-      }
+        providers: "5+"
+      },
+      links: { live: "https://stablechat.vercel.app/", code: "https://github.com/bijonguha/Stable-Chat-UI" },
+      // Put the file in public/media/ and set src, e.g. "/media/stable-chat/demo.mp4". Empty src shows a placeholder.
+      media: { type: "image" as const, src: "", poster: "", alt: "Stable Chat interface switching between AI providers" }
     },
     {
-      id: 5,
+      id: 6,
       name: "Jira Copilot",
       category: "AI-Powered Tools",
       role: "Lead Developer",
@@ -201,9 +234,11 @@ export const bijonConfig = {
       metrics: {
         timeSaved: "80%",
         accuracy: "92%",
-        teamsUsing: "50+",
-        storiesProcessed: "10K+"
-      }
+        teamsUsing: "50+"
+      },
+      links: { code: "https://github.com/bijonguha/jira_backend" },
+      // Put the file in public/media/ and set src, e.g. "/media/jira-copilot/demo.mp4". Empty src shows a placeholder.
+      media: { type: "image" as const, src: "", poster: "", alt: "Jira Copilot suggesting a story estimate" }
     }
   ],
 
@@ -234,7 +269,7 @@ export const bijonConfig = {
             client: "Compass Digital",
             logo: "compass-digital",
             role: "Generative AI Engineer",
-            description: "Built a multi-agent LangGraph system, productized from a hackathon POC, that auto-generates role-based training plans, TTS videos, adaptive assessments, and compliance reports."
+            description: "Built a multi-agent LangGraph system, productized from a hackathon POC, that auto-generates role-based training plans, TTS videos, adaptive assessments, and compliance reports. Its documentation and video engine is Content Intelligence."
           }
         ]
       },
@@ -377,7 +412,7 @@ export const bijonConfig = {
     endorsements: 6,
     fortune500Companies: 4,
     aiSpecializations: 3,
-    successRate: "100%",
+    yearsInAI: "7+",
     projectsDelivered: "25+",
     modelsDeployed: "50+",
     yearsExperience: 6
@@ -413,19 +448,25 @@ export const bijonConfig = {
       { label: "Testimonials", href: "#testimonials" },
       { label: "Contact", href: "#contact" }
     ],
+    // The PDF lives in public/. It downloads under downloadName.
+    resume: {
+      label: "Resume",
+      file: "Bijon-Guha-Resume.pdf",
+      downloadName: "Bijon-Guha-Resume.pdf"
+    },
     ctaButton: {
-      label: "Discuss Your AI Challenge",
+      label: "Get in touch",
       action: "scrollToContact"
     }
   },
 
   heroButtons: {
     primary: {
-      label: "VIEW LIVE APPS",
+      label: "View projects",
       action: "scrollToProjects"
     },
     secondary: {
-      label: "View Technical Deep-Dives",
+      label: "Read my articles",
       action: "openMedium",
       url: "https://medium.com/@iitbguha"
     }

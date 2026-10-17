@@ -323,3 +323,42 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.8);
 }
+
+/* Testimonials carousel: slow, continuous scroll. The track holds the list twice,
+   so moving it by half its width loops seamlessly. */
+@keyframes testimonial-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.testimonial-track {
+  animation: testimonial-marquee var(--marquee-duration, 90s) linear infinite;
+}
+
+.testimonial-marquee:hover .testimonial-track,
+.testimonial-marquee:focus-within .testimonial-track,
+.testimonial-marquee[data-paused="true"] .testimonial-track {
+  animation-play-state: paused;
+}
+
+.testimonial-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+/* Reduced motion: no auto-scroll; people swipe or scroll sideways instead. */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    animation: none;
+  }
+  .testimonial-marquee {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .testimonial-track > * {
+    scroll-snap-align: start;
+  }
+  .testimonial-track > [aria-hidden="true"] {
+    display: none;
+  }
+}

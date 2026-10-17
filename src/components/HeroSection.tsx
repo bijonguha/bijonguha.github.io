@@ -91,18 +91,18 @@ const HeroSection = () => {
                 projectsSection?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              EXPLORE MY AI JOURNEY
+              {bijonConfig.heroButtons.primary.label}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               onClick={() => {
-                const projectsSection = document.getElementById('projects');
-                projectsSection?.scrollIntoView({ behavior: 'smooth' });
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              {bijonConfig.heroButtons.primary.label}
+              {bijonConfig.navigation.ctaButton.label}
             </Button>
           </div>
         </div>

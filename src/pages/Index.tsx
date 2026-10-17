@@ -4,11 +4,13 @@ import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ExpertiseSection from '@/components/ExpertiseSection';
-import FloatingThemeToggle from '@/components/FloatingThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
-import { Mail, Github, ExternalLink, Menu, X } from 'lucide-react';
+import { Mail, Github, ExternalLink, Menu, X, Download } from 'lucide-react';
 import { bijonConfig } from '@/config/bijonConfig';
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
+
+const resumeHref = `${import.meta.env.BASE_URL}${bijonConfig.navigation.resume.file}`;
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,27 +45,31 @@ const Index = () => {
             ))}
           </div>
           
-          <Button 
-            size="sm" 
-            className="hidden md:block"
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              contactSection?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            {bijonConfig.navigation.ctaButton.label}
-          </Button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button size="sm" className="hidden md:inline-flex" asChild>
+              <a
+                href={resumeHref}
+                download={bijonConfig.navigation.resume.downloadName}
+                aria-label="Download resume (PDF)"
+              >
+                {bijonConfig.navigation.resume.label}
+                <Download className="w-4 h-4 ml-1.5" aria-hidden="true" />
+              </a>
+            </Button>
 
-          {/* Mobile Hamburger Menu */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+            {/* Mobile Hamburger Menu */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation Menu */}
@@ -80,16 +86,15 @@ const Index = () => {
                   {link.label}
                 </a>
               ))}
-              <Button 
-                size="sm" 
-                className="w-full mt-4"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
-                  closeMobileMenu();
-                }}
-              >
-                {bijonConfig.navigation.ctaButton.label}
+              <Button size="sm" className="w-full mt-4" asChild>
+                <a
+                  href={resumeHref}
+                  download={bijonConfig.navigation.resume.downloadName}
+                  onClick={closeMobileMenu}
+                >
+                  Download resume (PDF)
+                  <Download className="w-4 h-4 ml-1.5" aria-hidden="true" />
+                </a>
               </Button>
             </div>
           </div>
@@ -132,7 +137,7 @@ const Index = () => {
               }}
             >
               <Mail className="w-5 h-5 mr-2" />
-              Discuss Your AI Challenge
+              Email me
             </Button>
             <Button 
               variant="outline" 
@@ -152,6 +157,7 @@ const Index = () => {
               href={`https://${bijonConfig.contact.linkedin}`} 
               target="_blank" 
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               <LinkedInIcon className="w-6 h-6" />
@@ -160,12 +166,14 @@ const Index = () => {
               href={`https://${bijonConfig.contact.github}`} 
               target="_blank" 
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               <Github className="w-6 h-6" />
             </a>
             <a 
               href={`mailto:${bijonConfig.contact.email}`} 
+              aria-label="Email"
               className="p-3 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               <Mail className="w-6 h-6" />
@@ -186,8 +194,6 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Floating Theme Toggle */}
-      <FloatingThemeToggle />
     </div>
   );
 };
