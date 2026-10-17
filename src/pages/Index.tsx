@@ -1,9 +1,10 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import ExpertiseSection from '@/components/ExpertiseSection';
+import WritingSection from '@/components/WritingSection';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Mail, Github, ExternalLink, Menu, X, Download } from 'lucide-react';
@@ -14,6 +15,14 @@ const resumeHref = `${import.meta.env.BASE_URL}${bijonConfig.navigation.resume.f
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Arriving from another page via a link like "/#projects": scroll to that section.
+  useEffect(() => {
+    if (!window.location.hash) return;
+    const id = window.location.hash.slice(1);
+    const t = window.setTimeout(() => document.getElementById(id)?.scrollIntoView(), 100);
+    return () => window.clearTimeout(t);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -34,15 +43,17 @@ const Index = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {bijonConfig.navigation.links.map((link, index) => (
-              <a 
-                key={index}
-                href={link.href} 
-                className="hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {bijonConfig.navigation.links.map((link) =>
+              link.href.startsWith('/') ? (
+                <Link key={link.href} to={link.href} className="hover:text-primary transition-colors">
+                  {link.label}
+                </Link>
+              ) : (
+                <a key={link.href} href={link.href} className="hover:text-primary transition-colors">
+                  {link.label}
+                </a>
+              )
+            )}
           </div>
           
           <div className="flex items-center gap-2">
@@ -76,16 +87,27 @@ const Index = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/95 backdrop-blur-md border-t">
             <div className="container mx-auto px-6 py-4 space-y-4">
-              {bijonConfig.navigation.links.map((link, index) => (
-                <a 
-                  key={index}
-                  href={link.href} 
-                  className="block text-lg font-medium hover:text-primary transition-colors"
-                  onClick={closeMobileMenu}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {bijonConfig.navigation.links.map((link) =>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="block text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="block text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
               <Button size="sm" className="w-full mt-4" asChild>
                 <a
                   href={resumeHref}
@@ -110,8 +132,8 @@ const Index = () => {
         <ProjectsSection />
       </div>
       
-      <div id="expertise">
-        <ExpertiseSection />
+      <div id="writing">
+        <WritingSection />
       </div>
       
       <div id="testimonials">

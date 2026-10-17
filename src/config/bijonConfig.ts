@@ -1,4 +1,14 @@
 
+/** One item in a project's pop-up gallery. Paths are under public/, e.g. "/media/mistermd/demo.mp4". */
+export type ProjectMediaItem = {
+  type: "video" | "gif" | "image";
+  src: string;
+  /** Still frame for a video or GIF (recommended). */
+  poster?: string;
+  /** Short line shown under the media; also read by screen readers. */
+  caption?: string;
+};
+
 export const bijonConfig = {
   personal: {
     name: "BIJON GUHA",
@@ -94,6 +104,7 @@ export const bijonConfig = {
     {
       id: 1,
       name: "InterviewValley",
+      tagline: "Multi-agent AI that builds a complete interview plan in under 3 minutes.",
       category: "Agentic AI",
       role: "Generative AI Engineer",
       description: "Multi-agent AI platform that generates complete interview plans in under 3 minutes.",
@@ -115,12 +126,16 @@ export const bijonConfig = {
         architecture: "Multi-agent"
       },
       links: { live: "https://www.interviewvalley.com/" },
-      // Put the file in public/media/ and set src, e.g. "/media/interviewvalley/demo.mp4". Empty src shows a placeholder.
-      media: { type: "gif" as const, src: "", poster: "", alt: "InterviewValley generating an interview plan" }
+      // Card image. Put files in public/media/interviewvalley/ and use paths like "/media/interviewvalley/thumb.jpg".
+      thumbnail: "",
+      // Videos, GIFs and screenshots, shown in order in the pop-up player. Example:
+      // { type: "gif", src: "/media/interviewvalley/demo.gif", poster: "/media/interviewvalley/poster.jpg", caption: "InterviewValley generating an interview plan" }
+      media: [] as ProjectMediaItem[]
     },
     {
       id: 2,
       name: "Content Intelligence",
+      tagline: "Agent skills that turn a live web app into product docs and narrated walkthrough videos.",
       category: "AI Agent Skills",
       role: "Creator & Lead Engineer",
       description: "A no-code, skills-based extension for AI coding tools (Kiro, Claude Code, Codex) that explores a live web app on its own and produces product documentation, annotated screenshots and narrated video walkthroughs.",
@@ -143,12 +158,16 @@ export const bijonConfig = {
         videoPerTopic: "60–90 s"
       },
       links: {},
-      // Put the file in public/media/ and set src, e.g. "/media/content-intelligence/demo.mp4". Empty src shows a placeholder.
-      media: { type: "video" as const, src: "", poster: "", alt: "An AI agent exploring a web app and producing an annotated, narrated walkthrough video" }
+      // Card image. Put files in public/media/content-intelligence/ and use paths like "/media/content-intelligence/thumb.jpg".
+      thumbnail: "",
+      // Videos, GIFs and screenshots, shown in order in the pop-up player. Example:
+      // { type: "video", src: "/media/content-intelligence/demo.mp4", poster: "/media/content-intelligence/poster.jpg", caption: "An AI agent exploring a web app and producing an annotated, narrated walkthrough video" }
+      media: [] as ProjectMediaItem[]
     },
     {
       id: 3,
       name: "MisterMD",
+      tagline: "A zero-install markdown editor with live preview and diagrams.",
       category: "Developer Tools",
       role: "Full-Stack Developer & UI/UX Engineer",
       description: "Zero-installation markdown editor that transforms writing with live preview and professional features",
@@ -167,12 +186,16 @@ export const bijonConfig = {
         installTime: "0 sec"
       },
       links: { live: "https://mistermd.vercel.app/", code: "https://github.com/bijonguha/mistermd" },
-      // Put the file in public/media/ and set src, e.g. "/media/mistermd/demo.mp4". Empty src shows a placeholder.
-      media: { type: "gif" as const, src: "", poster: "", alt: "MisterMD editor with live markdown preview" }
+      // Card image. Put files in public/media/mistermd/ and use paths like "/media/mistermd/thumb.jpg".
+      thumbnail: "",
+      // Videos, GIFs and screenshots, shown in order in the pop-up player. Example:
+      // { type: "gif", src: "/media/mistermd/demo.gif", poster: "/media/mistermd/poster.jpg", caption: "MisterMD editor with live markdown preview" }
+      media: [] as ProjectMediaItem[]
     },
     {
       id: 4,
       name: "Browsermind",
+      tagline: "Private AI chat with models that run entirely in your browser.",
       category: "Browser-Based LLMs",
       role: "Generative AI Engineer",
       description: "Revolutionary WebLLM implementation enabling AI models to run locally in browsers",
@@ -190,12 +213,16 @@ export const bijonConfig = {
         modelsSupported: 5
       },
       links: { live: "https://browsermind.vercel.app/", code: "https://github.com/bijonguha/browsermind" },
-      // Put the file in public/media/ and set src, e.g. "/media/browsermind/demo.mp4". Empty src shows a placeholder.
-      media: { type: "gif" as const, src: "", poster: "", alt: "Browsermind chatting with a model running in the browser" }
+      // Card image. Put files in public/media/browsermind/ and use paths like "/media/browsermind/thumb.jpg".
+      thumbnail: "",
+      // Videos, GIFs and screenshots, shown in order in the pop-up player. Example:
+      // { type: "gif", src: "/media/browsermind/demo.gif", poster: "/media/browsermind/poster.jpg", caption: "Browsermind chatting with a model running in the browser" }
+      media: [] as ProjectMediaItem[]
     },
     {
       id: 5,
       name: "Stable Chat",
+      tagline: "One API to reach many AI providers.",
       category: "AI Infrastructure",
       role: "AI Systems Architect",
       description: "Universal AI endpoint management system for seamless integration",
@@ -213,12 +240,16 @@ export const bijonConfig = {
         providers: "5+"
       },
       links: { live: "https://stablechat.vercel.app/", code: "https://github.com/bijonguha/Stable-Chat-UI" },
-      // Put the file in public/media/ and set src, e.g. "/media/stable-chat/demo.mp4". Empty src shows a placeholder.
-      media: { type: "image" as const, src: "", poster: "", alt: "Stable Chat interface switching between AI providers" }
+      // Card image. Put files in public/media/stable-chat/ and use paths like "/media/stable-chat/thumb.jpg".
+      thumbnail: "",
+      // Videos, GIFs and screenshots, shown in order in the pop-up player. Example:
+      // { type: "image", src: "/media/stable-chat/screen-1.png", caption: "Stable Chat interface switching between AI providers" }
+      media: [] as ProjectMediaItem[]
     },
     {
       id: 6,
       name: "Jira Copilot",
+      tagline: "AI story estimation inside Jira, built for Siemens' GenAI marketplace.",
       category: "AI-Powered Tools",
       role: "Lead Developer",
       description: "Intelligent Jira integration with AI-powered story estimation, built as part of Siemens' internal GenAI Marketplace",
@@ -237,174 +268,11 @@ export const bijonConfig = {
         teamsUsing: "50+"
       },
       links: { code: "https://github.com/bijonguha/jira_backend" },
-      // Put the file in public/media/ and set src, e.g. "/media/jira-copilot/demo.mp4". Empty src shows a placeholder.
-      media: { type: "image" as const, src: "", poster: "", alt: "Jira Copilot suggesting a story estimate" }
-    }
-  ],
-
-  expertise: {
-    coreAreas: [
-      {
-        name: "Generative AI",
-        subAreas: ["LLMs (GPT, Claude, Llama)", "Diffusion Models", "Fine-tuning & RLHF", "Prompt Engineering"],
-        level: "Expert",
-        yearsExperience: 3,
-        useCases: [
-          {
-            name: "Heidi — Digital Healthcare Assistant",
-            client: "Compass Digital",
-            logo: "compass-digital",
-            role: "Lead Developer",
-            description: "Led development of Heidi, a digital healthcare assistant deployed across 500+ Compass Digital healthcare facilities. Integrated Text2SQL over a database handling 1M+ transactions/day, with row-level security for constrained LLM execution."
-          },
-          {
-            name: "Jira Copilot",
-            client: "Siemens",
-            logo: "siemens",
-            role: "Lead Developer",
-            description: "Conceptualized and led a GenAI marketplace for internal Siemens applications. Built Jira Copilot and EstiMATE, deployed on AWS at MVP scale to 450+ active users, integrated with the Atlassian Jira dashboard for automated story updates."
-          },
-          {
-            name: "Trainbrain",
-            client: "Compass Digital",
-            logo: "compass-digital",
-            role: "Generative AI Engineer",
-            description: "Built a multi-agent LangGraph system, productized from a hackathon POC, that auto-generates role-based training plans, TTS videos, adaptive assessments, and compliance reports. Its documentation and video engine is Content Intelligence."
-          }
-        ]
-      },
-      {
-        name: "Computer Vision",
-        subAreas: ["OCR & Handwriting Recognition", "Object Detection", "Image Classification", "Video Analysis"],
-        level: "Expert",
-        yearsExperience: 4,
-        useCases: [
-          {
-            name: "Airport Face Detection",
-            client: "Bosch",
-            logo: "bosch",
-            role: "Video Analytics Team",
-            description: "Developed object detection systems using YOLO and RetinaFace with custom retraining. Implemented image classification using transfer learning and FastAI."
-          },
-          {
-            name: "Drone-Vision AI Service",
-            client: "NEOM",
-            logo: "neom",
-            role: "Drone-Vision AI Service Deployment Lead",
-            description: "Established a scalable deep learning service template covering 10+ use cases on AWS. Built AWS Lambda services and CloudFormation templates for a Siemens-delivered NEOM engagement; mentored junior developers transitioning from notebooks to production code."
-          },
-          {
-            name: "Garry — Label OCR System",
-            client: "Cargill",
-            logo: "cargill",
-            role: "Intelligent Automation Team",
-            description: "Developed a deep learning service for label entity extraction. Built an MVP that evolved into a full label-verification automation system, benchmarking OCR solutions and integrating FastAPI, DB migrations, and CI/CD pipelines."
-          },
-          {
-            name: "Automotive Anomaly Detection Platform",
-            client: "Ford",
-            logo: "ford",
-            role: "Tech Lead",
-            description: "Designed the HLD/LLD and system architecture for a SaaS anomaly-detection platform. Built MQTT, Postgres, DL inference, and monitoring services, processing 10TB+ of data per day at sub-5-second throughput."
-          }
-        ]
-      },
-      {
-        name: "Production ML",
-        subAreas: ["Model Optimization", "Deployment Strategies", "MLOps", "System Architecture"],
-        level: "Expert",
-        yearsExperience: 7,
-        useCases: [
-          {
-            name: "QpiAI-Pro Deploy",
-            client: "QpiAI",
-            logo: "qpiai",
-            role: "Model Deployment Microservice",
-            description: "Built QpiAI-Pro Deploy to manage the deployment and scaling of AI models. Implemented quantization, pruning, and distillation techniques; configured OpenVino and NNCF."
-          },
-          {
-            name: "CKAN Data Platform",
-            client: "Siemens",
-            logo: "siemens",
-            role: "Lead Developer",
-            description: "Developed extensions for an open-source data platform supporting university research partners. Integrated AWS for data uploads and Elastic Search for efficient searching."
-          }
-        ]
-      },
-      {
-        name: "Mathematical Foundations",
-        subAreas: ["Statistical Analysis", "Neural Network Theory", "Linear Algebra", "Probability Theory"],
-        level: "Expert",
-        yearsExperience: 6,
-        useCases: [
-          {
-            name: "Handwritten Math Equation OCR",
-            client: "Intel",
-            logo: "intel",
-            role: "AI Engineer",
-            description: "Designed an end-to-end OCR system for handwritten mathematical equations using deep learning. Built a plug-and-play Python package with Keras."
-          },
-          {
-            name: "Viva Sense",
-            client: "Bosch",
-            logo: "bosch",
-            role: "AI Engineer",
-            description: "Built a hemoglobin measurement system from PPG (photoplethysmography) signals, productized as Viva Sense."
-          }
-        ]
-      }
-    ]
-  },
-
-  timeline: [
-    {
-      year: "2018",
-      milestone: "Academic Excellence",
-      description: "Graduated in Applied Mathematics from IIT Roorkee with Image Processing specialization",
-      testimonial: "Government of India",
-      achievement: "IIT Roorkee Graduate • Inspire Scholarship Recipient"
-    },
-    {
-      year: "2019",
-      milestone: "Mathematical Foundations",
-      description: "Handwriting recognition with mathematical equations",
-      testimonial: "Sujit Ojha",
-      achievement: "Built OCR system for mathematical expressions"
-    },
-    {
-      year: "2020", 
-      milestone: "Computer Vision Mastery",
-      description: "Publication-worthy computer vision solutions",
-      testimonial: "Nimai Chand Das Adhikari",
-      achievement: "Developed enterprise-grade CV systems"
-    },
-    {
-      year: "2021",
-      milestone: "Production ML Systems", 
-      description: "Making models production-ready with precision",
-      testimonial: "Indrajit Kar",
-      achievement: "Deployed ML systems at scale"
-    },
-    {
-      year: "2022",
-      milestone: "Enterprise AI Solutions",
-      description: "Strategic AI implementations for Fortune 500",
-      testimonial: "Ritvik Raj", 
-      achievement: "Led AI transformation projects"
-    },
-    {
-      year: "2023",
-      milestone: "Created AI platform for NEOM",
-      description: "Advanced analytical platform and scalable systems",
-      testimonial: "Shubham Dubey",
-      achievement: "Built statistical AI models for finance"
-    },
-    {
-      year: "2025",
-      milestone: "Generative AI Expert",
-      description: "Browser-based LLMs and WebLLM innovation",
-      testimonial: "Industry Recognition",
-      achievement: "Launched Browsermind platform"
+      // Card image. Put files in public/media/jira-copilot/ and use paths like "/media/jira-copilot/thumb.jpg".
+      thumbnail: "",
+      // Videos, GIFs and screenshots, shown in order in the pop-up player. Example:
+      // { type: "image", src: "/media/jira-copilot/screen-1.png", caption: "Jira Copilot suggesting a story estimate" }
+      media: [] as ProjectMediaItem[]
     }
   ],
 
@@ -444,7 +312,7 @@ export const bijonConfig = {
     links: [
       { label: "Home", href: "#home" },
       { label: "AI Projects", href: "#projects" },
-      { label: "Expertise", href: "#expertise" },
+      { label: "Case studies", href: "/case-studies" },
       { label: "Testimonials", href: "#testimonials" },
       { label: "Contact", href: "#contact" }
     ],

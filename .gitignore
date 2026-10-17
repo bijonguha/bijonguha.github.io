@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private working notes for case studies (never published)
+.case-study-notes/
