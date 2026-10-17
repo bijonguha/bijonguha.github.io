@@ -280,7 +280,7 @@ export const bijonConfig = {
     endorsements: 6,
     fortune500Companies: 4,
     aiSpecializations: 3,
-    yearsInAI: "7+",
+    yearsInAI: "9+",
     projectsDelivered: "25+",
     modelsDeployed: "50+",
     yearsExperience: 6
